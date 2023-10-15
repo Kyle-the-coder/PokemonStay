@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,7 +6,7 @@
 }
 :root {
   --background-color: #e3e3e3;
-  --text-color: #000000;
+  --text-color: #f5f5f5;
 }
 
 body {
@@ -14,37 +15,39 @@ body {
 }
 
 body.dark-mode {
-  --background-color: #3c3c3c;
+  --background-color: #272727;
   --text-color: #f5f5f5;
 }
 
 .top-nav-dark {
   width: 100%;
-  color: hsl(200, 20%, 95%);
-  background: hsl(8, 93%, 29%);
+
+  background: hsl(286, 54%, 72%);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
   padding: 1rem 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2px;
   position: sticky;
   top: 0;
   z-index: 10000;
+  text-shadow: -5px 4px 5px rgba(0, 0, 0, 1.5);
 }
 .top-nav-light {
   width: 100%;
-  color: hsl(200, 20%, 95%);
-  background: hsl(230, 71%, 24%);
+
+  background: hsl(286, 87%, 50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
   padding: 1rem 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2px;
   position: sticky;
   top: 0;
   z-index: 10000;
+  text-shadow: -5px 4px 5px rgba(0, 0, 0, 1.5);
 }
 
 .nav-list {
@@ -67,11 +70,11 @@ body.dark-mode {
 }
 
 .nav-text-large {
-  font-size: 2.5rem;
+  font-size: 3rem;
   display: flex;
   align-items: center;
-  width: 490px;
   justify-content: space-between;
+  font-family: "Lobster", sans-serif;
 }
 .nav-Img {
   width: 60px;
@@ -85,35 +88,113 @@ body.dark-mode {
   text-decoration: none;
   color: white;
 }
+.home-button > img {
+  margin-left: 10px;
+}
 
 .container {
   max-width: 1400px;
+  background: linear-gradient(to bottom, #037d5a, #00fcfc);
   margin: 0 auto;
-  padding: 0 2rem;
-  margin-bottom: 2rem;
+  padding: 1rem 0;
 }
 
+/* WELCOME CLASSES */
 .welcomeContainer {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .welcomeTitle {
-  height: 200px;
   justify-content: space-between;
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Lobster", sans-serif;
+  font-size: 2rem;
+  text-shadow: -5px 4px 5px rgba(0, 0, 0, 1.5);
+}
+.welcomeInfoContainer {
+  display: flex;
+  width: 100%;
+  z-index: 2;
+}
+
+.welcomeInfo {
+  background: linear-gradient(135deg, #6db9eb, #89e4af, #b664d6);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #000000;
+}
+
+.welcomeBtn {
+  display: flex;
+  margin: 40px;
+}
+
+.welcomeDisplayInfoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 400px;
+  padding: 0px 40px;
+  margin-bottom: 40px;
+}
+.welcomeDisplay {
+  width: 400px;
+  height: 100%;
+  background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.2rem;
+  z-index: 1;
+}
+.welcomeDisplay > h1 {
+  margin-top: 10px;
+}
+
+.welcomeLeaf {
+  position: absolute;
+  left: -100px;
+  z-index: 3;
+}
+.welcomeLgLeaf {
+  position: absolute;
+  left: -200px;
+  top: 250px;
+}
+.welcomeReverseLeaf {
+  position: absolute;
+  right: -200px;
+  top: 250px;
+}
+.welcomeReverseLgLeaf {
+  position: absolute;
+  right: -200px;
+  top: 10px;
 }
 
 .btn {
-  padding: 5px 10px 5px 10px;
-  background-color: hsl(8, 80%, 35%);
+  padding: 15px 30px 15px 30px;
+  background-color: hsl(286, 82%, 73%);
   color: white;
-  border-radius: 0.8rem;
+  border-radius: 0.9rem;
   text-decoration: none;
+  font-size: 1.4rem;
+  color: black;
+  font-weight: bold;
 }
 .pokedexBtn {
   padding: 5px 10px 5px 10px;

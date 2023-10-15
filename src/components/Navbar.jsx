@@ -12,7 +12,7 @@ export function Navbar() {
     <nav className={!darkMode ? "top-nav-dark" : "top-nav-light"}>
       <div className="nav-text-large">
         <Link to="/" className="home-button">
-          Pokemon Stay Home
+          Pokemon Stay
           <img src={pokeBall} className="nav-Img" />
         </Link>
       </div>
