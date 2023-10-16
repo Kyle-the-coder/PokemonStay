@@ -6,6 +6,17 @@ import { getPokemon } from "../api/getPokemon";
 import { getRandomNum } from "../api/getRandomNum";
 import { v4 as uuidv4 } from "uuid";
 import { handleCapture, handleRun } from "../functions/handleCapture";
+import leaf from "../assets/leaf2.png";
+import lgLeaf from "../assets/leaf3.png";
+import lgLeaf2 from "../assets/lgLeaf2.png";
+import rLeaf from "../assets/reverseLeaf2.png";
+import rLgLeaf from "../assets/reverseLgLeaf.png";
+import wildGrass from "../assets/wildGrass3.png";
+import wildGrass2 from "../assets/wildGrass.png";
+import pokeball from "../assets/pokeballFinal.png";
+import greatBall from "../assets/greatballFinal.png";
+
+import "../styles/newPokemon.css";
 
 function NewPokemon() {
   const { state } = useNavigation();
@@ -100,131 +111,173 @@ function NewPokemon() {
   return (
     <>
       <div className="container">
-        <div className="title">
-          <h1>Search in the wild grass:</h1>
-        </div>
-        <Form method="post">
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter a pokemon's name..."
-            defaultValue={pokemon?.name}
-          />
-          <button onClick={() => setBallHit(null)}>submit</button>
-        </Form>
-        <div className="errorContainer">
-          <p className="errorMessage">{errors != null && errors.message}</p>
-        </div>
+        <div className="newPokemonContainer">
+          <div className="welcomeLeaf">
+            <img src={leaf} width="300" />
+          </div>
+          <div className="welcomeLgLeaf2">
+            <img src={lgLeaf2} width="300" />
+          </div>
+          <div className="welcomeLgLeaf">
+            <img src={lgLeaf} width="700" />
+          </div>
+          <div className="welcomeReverseLeaf">
+            <img src={rLeaf} width="700" />
+          </div>
+          <div className="welcomeReverseLgLeaf">
+            <img src={rLgLeaf} width="400" />
+          </div>
 
-        <div className="resultsContainer">
-          {pokemon === null ? (
-            <>
-              <div className="resultsContainer">
-                <h1>{catchMessage}</h1>
-                <h1>Pokeball Count: {pokeBallCount}</h1>
-                {pokeBallCount === 0 ? (
+          <div className="wildGrassDark1">
+            <img src={wildGrass2} width="400" />
+          </div>
+          <div className="wildGrassDark2">
+            <img src={wildGrass2} width="400" />
+          </div>
+          <div className="wildGrass1">
+            <img src={wildGrass} width="400" />
+          </div>
+          <div className="wildGrass2">
+            <img src={wildGrass} width="400" />
+          </div>
+
+          <div className="title">
+            <h1>Search in the wild grass:</h1>
+            <Form className="pokeForm" method="post">
+              <input
+                type="text"
+                name="name"
+                className="pokeInput"
+                placeholder="Enter a pokemon's name..."
+                defaultValue={pokemon?.name}
+              />
+              <button className="smallBtn" onClick={() => setBallHit(null)}>
+                submit
+              </button>
+            </Form>
+          </div>
+          <div className="errorContainer">
+            <p className="errorMessage">{errors != null && errors.message}</p>
+          </div>
+
+          <div className="resultsContainer">
+            {pokemon === null ? (
+              <>
+                <div className="resultsContainer">
+                  <h1>{catchMessage}</h1>
+                  <h1>Pokeball Count: {pokeBallCount}</h1>
+                  {pokeBallCount === 0 ? (
+                    <>
+                      <button
+                        className="btn"
+                        onClick={() => handleGetMorePokeballs()}
+                      >
+                        Get More Pokeballs
+                      </button>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                  <EmptyCard />
+                </div>
+              </>
+            ) : (
+              <>
+                {pokemon && (
                   <>
-                    <button
-                      className="btn"
-                      onClick={() => handleGetMorePokeballs()}
-                    >
-                      Get More Pokeballs
-                    </button>
-                  </>
-                ) : (
-                  ""
-                )}
-                <EmptyCard />
-              </div>
-            </>
-          ) : (
-            <>
-              {pokemon && (
-                <>
-                  <div>{pokemon.shiny ? <h1>Wow!</h1> : ""}</div>
-                  <h1>
-                    {pokemon.captured.capture === true
-                      ? `You Caught a wild ${pokemon.shiny ? "Shiny " : ""}
+                    <div className="textWhite">
+                      {pokemon.shiny ? <h1>Wow!</h1> : ""}
+                    </div>
+                    <h1 className="textWhite">
+                      {pokemon.captured.capture === true
+                        ? `You Caught a wild ${pokemon.shiny ? "Shiny " : ""}
                     ${
                       pokemon?.pokeInfo.name.charAt(0).toUpperCase() +
                       pokemon?.pokeInfo.name.slice(1).toLowerCase()
                     }
                     ! `
-                      : `You Found a wild ${pokemon.shiny ? "Shiny " : ""}
+                        : `You Found a wild ${pokemon.shiny ? "Shiny " : ""}
                     ${
                       pokemon?.pokeInfo.name.charAt(0).toUpperCase() +
                       pokemon?.pokeInfo.name.slice(1).toLowerCase()
                     }
                     ! `}
-                  </h1>
-                </>
-              )}
-              <PokemonCard
-                pokemon={pokemon.pokeInfo}
-                state={state}
-                captured={pokemon.captured.capture}
-                setIsCaptured={setIsCaptured}
-                isCaptured={isCaptured}
-                ballSpin={ballSpin}
-                isShiny={pokemon.shiny}
-                starRating={pokemon.starRating}
-                ballHit={ballHit}
-                isPokeballShown={isPokeballShown}
-              />
-              <div className="captureContainer">
-                <p>
-                  Throw Status:{" "}
-                  <span className="captureStatus">
-                    {isBallThrown ? (
-                      <>ball is thrown...</>
-                    ) : (
-                      "" ||
-                      (ballHit === null ? (
-                        "ball is not thrown..."
-                      ) : ballHit === true ? (
-                        <span className="greenText">ball hit!</span>
-                      ) : (
-                        <span className="redText">ball missed</span>
-                      ))
-                    )}
-                  </span>
-                </p>
-                <p>
-                  Capture Status:{" "}
-                  <span className="captureStatus">
-                    {isCaptured ? (
-                      <span className="greenText">captured!</span>
-                    ) : ballHit === true && ballSpin === false ? (
-                      <span className="redText">Pokemon got out!</span>
-                    ) : (
-                      "not captured"
-                    )}
-                  </span>
-                </p>
-                <p>Pokeball Count: {pokeBallCount}</p>
-                <h1>What will you do?</h1>
-                <div>
-                  <button
-                    onClick={() => {
-                      handleBallThrown(pokemon.pokeInfo);
-                    }}
-                    className="btn"
-                    disabled={pokemon.captured.capture}
-                  >
-                    Throw Pokeball
-                  </button>
-                  <button
-                    onClick={() => {
-                      handleGetAway();
-                    }}
-                    className="btn"
-                  >
-                    Run
-                  </button>
+                    </h1>
+                  </>
+                )}
+                <div className="uiContainer">
+                  <div className="pokeballDisplayInfo">
+                    <img src={pokeball} width="50" />
+                    <img src={greatBall} width="50" />
+                  </div>
+                  <PokemonCard
+                    pokemon={pokemon.pokeInfo}
+                    state={state}
+                    captured={pokemon.captured.capture}
+                    setIsCaptured={setIsCaptured}
+                    isCaptured={isCaptured}
+                    ballSpin={ballSpin}
+                    isShiny={pokemon.shiny}
+                    starRating={pokemon.starRating}
+                    ballHit={ballHit}
+                    isPokeballShown={isPokeballShown}
+                  />
+                  <div className="captureDisplayInfo">
+                    <p>
+                      Throw Status:{" "}
+                      <span className="captureStatus">
+                        {isBallThrown ? (
+                          <>ball is thrown...</>
+                        ) : (
+                          "" ||
+                          (ballHit === null ? (
+                            "ball is not thrown..."
+                          ) : ballHit === true ? (
+                            <span className="greenText">ball hit!</span>
+                          ) : (
+                            <span className="redText">ball missed</span>
+                          ))
+                        )}
+                      </span>
+                    </p>
+                    <p>
+                      Capture Status:{" "}
+                      <span className="captureStatus">
+                        {isCaptured ? (
+                          <span className="greenText">captured!</span>
+                        ) : ballHit === true && ballSpin === false ? (
+                          <span className="redText">Pokemon got out!</span>
+                        ) : (
+                          "not captured"
+                        )}
+                      </span>
+                    </p>
+                    <p>Pokeball Count: {pokeBallCount}</p>
+                    <h1>What will you do?</h1>
+                    <div>
+                      <button
+                        onClick={() => {
+                          handleBallThrown(pokemon.pokeInfo);
+                        }}
+                        className="smallBtn"
+                        disabled={pokemon.captured.capture}
+                      >
+                        Throw Pokeball
+                      </button>
+                      <button
+                        onClick={() => {
+                          handleGetAway();
+                        }}
+                        className="smallBtn"
+                      >
+                        Run
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </>
-          )}
+              </>
+            )}
+          </div>
         </div>
       </div>
     </>
