@@ -7,8 +7,10 @@ import leaf from "../assets/leaf2.png";
 import lgLeaf from "../assets/leaf3.png";
 import rLeaf from "../assets/reverseLeaf2.png";
 import rLgLeaf from "../assets/reverseLgLeaf.png";
+import { useTheme } from "../context/ThemeContext";
 function Home() {
   const navigate = useNavigate();
+  const { darkMode, toggleDarkMode } = useTheme();
 
   return (
     <>
@@ -28,10 +30,10 @@ function Home() {
           </div>
 
           <div className="welcomeTitle">
-            <h1>Welcome to Pokemon Stay Home!</h1>
+            <h1>Welcome to Pokemon Stay!</h1>
           </div>
           <div className="welcomeInfoContainer">
-            <img src={pokemonStorageImg} width="550" />
+            <img src={pokemonStorageImg} width="680" />
             <div className="welcomeInfo">
               <p>
                 A digital card collector game where you have to actually catch
@@ -50,7 +52,7 @@ function Home() {
               <img src={shinyImg} width="300" />
               <h1>SHINYS</h1>
             </div>
-            <div className="welcomeDisplay">
+            <div className="welcomeDisplayGrey">
               <img src={rarityImg} width="300" />
               <h1>RARITY</h1>
             </div>
