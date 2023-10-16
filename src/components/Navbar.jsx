@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import pokeBall from "../assets/pokeball.png";
 import { useTheme } from "../context/ThemeContext";
 import "../styles/toggle.css";
+import "../styles/navbar.css";
 
 export function Navbar() {
   const { darkMode, toggleDarkMode } = useTheme();
