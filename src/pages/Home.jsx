@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import pokemonStorageImg from "../assets/pokemonStorage.webp";
 import shinyImg from "../assets/stars.png";
 import rarityImg from "../assets/threeStar.png";
-import greatBall from "../assets/ultra-ball.png";
+import ultraBall from "../assets/ultraballFinal.png";
 import leaf from "../assets/leaf2.png";
 import lgLeaf from "../assets/leaf3.png";
 import rLeaf from "../assets/reverseLeaf2.png";
@@ -10,7 +10,6 @@ import rLgLeaf from "../assets/reverseLgLeaf.png";
 import { useTheme } from "../context/ThemeContext";
 function Home() {
   const navigate = useNavigate();
-  const { darkMode, toggleDarkMode } = useTheme();
 
   return (
     <>
@@ -57,7 +56,7 @@ function Home() {
               <h1>RARITY</h1>
             </div>
             <div className="welcomeDisplay">
-              <img src={greatBall} width="300" />
+              <img src={ultraBall} width="300" />
               <h1>POKEBALLS</h1>
             </div>
           </div>

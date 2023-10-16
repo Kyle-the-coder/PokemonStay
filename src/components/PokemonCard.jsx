@@ -4,12 +4,12 @@ import { typeList } from "../svg/typeList";
 import axios from "axios";
 import background from "../assets/bg.webp";
 import pokeBallEmpty from "../assets/pokeballEmpty.png";
-import pokeBallFull from "../assets/pokeballFull.png";
+import pokeBallFull from "../assets/pokeballFinal.png";
 import oneStar from "../assets/oneStar.png";
 import twoStar from "../assets/twoStar.png";
 import threeStar from "../assets/threeStar.png";
 import ballOpen from "../assets/pokeballOpen.png";
-import ballClosed from "../assets/pokeballClosed2.png";
+import ballClosed from "../assets/pokeballFinal.png";
 import "../styles/pokemonCard.css";
 
 export function PokemonCard({
@@ -133,7 +133,7 @@ export function PokemonCard({
           <div className="pokemonImg">
             {captured && isPokeballShown ? (
               <div className="pokeballSprite">
-                <img src={ballClosed} width="80" />
+                <img src={ballClosed} width="60" />
               </div>
             ) : ballHit === true && ballSpin === false ? (
               <div className="pokemonSprite">
@@ -145,7 +145,7 @@ export function PokemonCard({
               </div>
             ) : ballHit ? (
               <div className="pokeballSprite">
-                <img src={ballOpen} width="80" className="wiggle" />
+                <img src={ballClosed} width="60" className="wiggle" />
               </div>
             ) : (
               <>

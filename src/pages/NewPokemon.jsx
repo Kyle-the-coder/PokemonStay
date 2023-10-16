@@ -13,13 +13,16 @@ import rLeaf from "../assets/reverseLeaf2.png";
 import rLgLeaf from "../assets/reverseLgLeaf.png";
 import wildGrass from "../assets/wildGrass3.png";
 import wildGrass2 from "../assets/wildGrass.png";
-import pokeball from "../assets/pokeballFinal.png";
+import pokeBall from "../assets/pokeballFinal.png";
 import greatBall from "../assets/greatballFinal.png";
+import ultraBall from "../assets/ultraballFinal.png";
 
 import "../styles/newPokemon.css";
+import { useTheme } from "../context/ThemeContext";
 
 function NewPokemon() {
   const { state } = useNavigation();
+  const { darkMode, toggleDarkMode } = useTheme();
   const errors = useActionData() || null;
   //HANDLE POKEMON CAPTURE STATES
   const [isCaptured, setIsCaptured] = useState(false);
@@ -27,6 +30,7 @@ function NewPokemon() {
   const [ballHit, setBallHit] = useState(null);
   const [ballSpin, setBallSpin] = useState(false);
   const [isPokeballShown, setIsPokeballShown] = useState(true);
+  const [ballChoice, setBallChoice] = useState(pokeBall);
   const [catchMessage, setCatchMessage] = useState("");
   //LOCAL STORAGE STATES
   const [pokeBallCount, setPokeBallCount] = useState(() => {
@@ -206,9 +210,50 @@ function NewPokemon() {
                   </>
                 )}
                 <div className="uiContainer">
-                  <div className="pokeballDisplayInfo">
-                    <img src={pokeball} width="50" />
-                    <img src={greatBall} width="50" />
+                  <div
+                    className={
+                      darkMode
+                        ? "pokeballDisplayInfoDark"
+                        : "pokeballDisplayInfoLight"
+                    }
+                  >
+                    <h3>Choose your pokeball:</h3>
+
+                    <div className="pokeballAndName">
+                      <p>Pokeball:</p>
+                      <img
+                        src={pokeBall}
+                        width="50"
+                        className="pokeballPng"
+                        onClick={() => setBallChoice(pokeBall)}
+                      />
+                    </div>
+                    <div className="pokeballAndName">
+                      <p>Greatball:</p>
+                      <img
+                        src={greatBall}
+                        width="50"
+                        className="pokeballPng"
+                        onClick={() => setBallChoice(greatBall)}
+                      />
+                    </div>
+                    <div className="pokeballAndName">
+                      <p>Ultraball:</p>
+                      <img
+                        src={ultraBall}
+                        width="50"
+                        className="pokeballPng"
+                        onClick={() => setBallChoice(ultraBall)}
+                      />
+                    </div>
+                    <div className="currentChoice">
+                      Current Choice:
+                      <img
+                        src={ballChoice}
+                        width="50"
+                        className={ballSpin ? "rotatingPokeball" : ""}
+                      />
+                    </div>
                   </div>
                   <PokemonCard
                     pokemon={pokemon.pokeInfo}
@@ -222,7 +267,13 @@ function NewPokemon() {
                     ballHit={ballHit}
                     isPokeballShown={isPokeballShown}
                   />
-                  <div className="captureDisplayInfo">
+                  <div
+                    className={
+                      darkMode
+                        ? "captureDisplayInfoDark"
+                        : "captureDisplayInfoLight"
+                    }
+                  >
                     <p>
                       Throw Status:{" "}
                       <span className="captureStatus">

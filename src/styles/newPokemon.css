@@ -65,17 +65,18 @@
   justify-content: space-evenly;
   margin-bottom: 30px;
 }
-.pokeballDisplayInfo {
+.pokeballDisplayInfoDark {
   width: 300px;
   background-color: #272727;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   padding: 20px;
   border-radius: 2rem;
   color: white;
 }
-.captureDisplayInfo {
+.captureDisplayInfoDark {
   width: 300px;
   background-color: #272727;
   display: flex;
@@ -85,6 +86,44 @@
   padding: 20px;
   border-radius: 2rem;
   color: white;
+}
+.pokeballDisplayInfoLight {
+  width: 300px;
+  background-color: #e3e3e3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 2rem;
+  color: black;
+}
+.captureDisplayInfoLight {
+  width: 300px;
+  background-color: #e3e3e3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  border-radius: 2rem;
+  color: black;
+}
+.pokeballAndName {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.currentChoice {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: space-evenly;
+}
+.pokeballPng {
+  cursor: pointer;
 }
 
 .captureContainer > div {
@@ -153,6 +192,17 @@
   align-items: center;
   overflow: hidden;
   position: relative;
+}
+.rotatingPokeball {
+  animation: rotate 3s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); /* Start with no rotation (0 degrees) */
+  }
+  to {
+    transform: rotate(360deg); /* Rotate a full circle (360 degrees) */
+  }
 }
 
 /* Mobile styles */
