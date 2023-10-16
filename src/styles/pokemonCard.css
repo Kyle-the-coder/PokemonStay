@@ -146,12 +146,14 @@
   width: 100%;
   justify-content: space-between;
   margin-bottom: 1px;
+  color: white;
 }
 .shiny {
   display: flex;
   width: 100%;
   justify-content: right;
   margin-bottom: 1px;
+  color: white;
 }
 
 .pokedexLink {
