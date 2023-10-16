@@ -162,6 +162,7 @@ body.dark-mode {
   justify-content: center;
   border-radius: 1.2rem;
   z-index: 1;
+  color: white;
 }
 .welcomeDisplayGrey {
   width: 400px;
@@ -173,6 +174,7 @@ body.dark-mode {
   justify-content: center;
   border-radius: 1.2rem;
   z-index: 1;
+  color: white;
 }
 .welcomeDisplay > h1 {
   margin-top: 10px;
