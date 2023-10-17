@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import pokeBall from "../assets/pokeball.png";
+import pikachu from "../assets/pikachu.png";
 import { useTheme } from "../context/ThemeContext";
 import "../styles/toggle.css";
 import "../styles/navbar.css";
@@ -13,7 +13,7 @@ export function Navbar() {
       <div className="nav-text-large">
         <Link to="/" className="home-button">
           Pokemon Stay
-          <img src={pokeBall} className="nav-Img" />
+          <img src={pikachu} className="nav-Img" />
         </Link>
       </div>
       <ul className="nav-list">
