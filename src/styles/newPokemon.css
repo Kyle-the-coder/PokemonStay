@@ -21,6 +21,17 @@
   font-weight: bold;
   margin-left: 10px;
 }
+.captureBtn {
+  padding: 5px 10px 5px 10px;
+  background-color: hsl(286, 82%, 73%);
+  color: white;
+  border-radius: 0.9rem;
+  text-decoration: none;
+
+  color: black;
+  font-weight: bold;
+  margin-left: 10px;
+}
 
 .pokeInput {
   padding: 5px 10px 5px 10px;
@@ -113,6 +124,12 @@
   color: black;
   border: 2px solid #272727;
 }
+.resultDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .pokeballAndName {
   width: 100%;
   display: flex;
@@ -200,6 +217,7 @@
 .rotatingPokeball {
   animation: rotate 3s linear infinite;
 }
+
 @keyframes rotate {
   from {
     transform: rotate(0deg); /* Start with no rotation (0 degrees) */
