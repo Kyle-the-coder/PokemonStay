@@ -273,9 +273,9 @@ function NewPokemon() {
                         : "captureDisplayInfoLight"
                     }
                   >
-                    <p>
-                      Throw Status:{" "}
-                      <span className="captureStatus">
+                    <div>
+                      <p className="captureStatus">Throw Status: </p>
+                      <p>
                         {isBallThrown ? (
                           <>ball is thrown...</>
                         ) : (
@@ -288,10 +288,10 @@ function NewPokemon() {
                             <span className="redText">ball missed</span>
                           ))
                         )}
-                      </span>
-                    </p>
-                    <p>
-                      Capture Status:{" "}
+                      </p>
+                    </div>
+                    <div>
+                      <p>Capture Status: </p>
                       <span className="captureStatus">
                         {isCaptured ? (
                           <span className="greenText">captured!</span>
@@ -301,7 +301,7 @@ function NewPokemon() {
                           "not captured"
                         )}
                       </span>
-                    </p>
+                    </div>
                     <p>Pokeball Count: {pokeBallCount}</p>
                     <h1>What will you do?</h1>
                     <div>
