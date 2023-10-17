@@ -114,6 +114,8 @@
 .pokemonBackgroundImg {
   object-fit: cover;
   position: absolute;
+  left: -80px;
+  bottom: -43px;
 }
 
 /* POKEMON CARD STATS */
