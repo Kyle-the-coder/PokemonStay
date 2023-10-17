@@ -6,6 +6,7 @@ import { getPokemon } from "../api/getPokemon";
 import { getRandomNum } from "../api/getRandomNum";
 import { v4 as uuidv4 } from "uuid";
 import { handleCapture, handleRun } from "../functions/handleCapture";
+import { useTheme } from "../context/ThemeContext";
 import leaf from "../assets/leaf2.png";
 import lgLeaf from "../assets/leaf3.png";
 import lgLeaf2 from "../assets/lgLeaf2.png";
@@ -16,9 +17,7 @@ import wildGrass2 from "../assets/wildGrass.png";
 import pokeBall from "../assets/pokeballFinal.png";
 import greatBall from "../assets/greatballFinal.png";
 import ultraBall from "../assets/ultraballFinal.png";
-
 import "../styles/newPokemon.css";
-import { useTheme } from "../context/ThemeContext";
 
 function NewPokemon() {
   const { state } = useNavigation();
