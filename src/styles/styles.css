@@ -139,7 +139,9 @@ body.dark-mode {
   text-decoration: none;
   font-size: 1.4rem;
   color: black;
+  cursor: pointer;
   font-weight: bold;
+  z-index: 1;
 }
 .pokedexBtn {
   padding: 5px 10px 5px 10px;
@@ -162,6 +164,15 @@ body.dark-mode {
 }
 .greenText {
   color: rgb(40, 199, 40);
+}
+.lightBlueText {
+  color: rgb(58, 175, 244);
+}
+.lightGreyText {
+  color: rgb(197, 197, 197);
+}
+.darkGreyText {
+  color: rgb(62, 62, 62);
 }
 .hoverInfo {
   width: 50px;
