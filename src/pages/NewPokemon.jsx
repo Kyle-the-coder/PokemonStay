@@ -273,11 +273,17 @@ function NewPokemon() {
                         : "captureDisplayInfoLight"
                     }
                   >
-                    <div>
-                      <p className="captureStatus">Throw Status: </p>
-                      <p>
+                    <div className="resultDisplay">
+                      <p
+                        className={darkMode ? "lightGreyText" : "darkGreyText"}
+                      >
+                        Throw Status:
+                      </p>
+                      <h3>
                         {isBallThrown ? (
-                          <>ball is thrown...</>
+                          <span className="lightBlueText">
+                            ball is thrown...
+                          </span>
                         ) : (
                           "" ||
                           (ballHit === null ? (
@@ -288,11 +294,15 @@ function NewPokemon() {
                             <span className="redText">ball missed</span>
                           ))
                         )}
-                      </p>
+                      </h3>
                     </div>
-                    <div>
-                      <p>Capture Status: </p>
-                      <span className="captureStatus">
+                    <div className="resultDisplay">
+                      <p
+                        className={darkMode ? "lightGreyText" : "darkGreyText"}
+                      >
+                        Capture Status:
+                      </p>
+                      <h3 className="captureStatus">
                         {isCaptured ? (
                           <span className="greenText">captured!</span>
                         ) : ballHit === true && ballSpin === false ? (
@@ -300,16 +310,23 @@ function NewPokemon() {
                         ) : (
                           "not captured"
                         )}
-                      </span>
+                      </h3>
                     </div>
-                    <p>Pokeball Count: {pokeBallCount}</p>
-                    <h1>What will you do?</h1>
+                    <div className="resultDisplay">
+                      <p
+                        className={darkMode ? "lightGreyText" : "darkGreyText"}
+                      >
+                        Pokeball Count:{" "}
+                      </p>
+                      <h3>{pokeBallCount}</h3>
+                    </div>
+                    <h4>What will you do?</h4>
                     <div>
                       <button
                         onClick={() => {
                           handleBallThrown(pokemon.pokeInfo);
                         }}
-                        className="smallBtn"
+                        className="captureBtn"
                         disabled={pokemon.captured.capture}
                       >
                         Throw Pokeball
@@ -318,7 +335,7 @@ function NewPokemon() {
                         onClick={() => {
                           handleGetAway();
                         }}
-                        className="smallBtn"
+                        className="captureBtn"
                       >
                         Run
                       </button>
