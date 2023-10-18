@@ -175,6 +175,7 @@ export function PokeList({
               starRating={pokemon.starRating}
               setIsPokeballShown={setIsPokeballShown}
               isPokeballShown={isPokeballShown}
+              pokeballType={pokemon.pokeballType}
             />
           </div>
         ))}
