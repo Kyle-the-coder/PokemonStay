@@ -7,7 +7,8 @@ export function handleRun(pokemon) {
   const getInfo = JSON.parse(newInfo);
   return (pokemon = getInfo);
 }
-export function handleCapture(pokemon) {
+
+export function handleCapture(pokemon, pokeballType) {
   const randomUUID = uuidv4();
   //FALSEY INPUT
   if (!pokemon.captured) {
@@ -34,6 +35,7 @@ export function handleCapture(pokemon) {
               captured: { capture: true, release: false },
               shiny: pokemon.shiny,
               starRating: pokemon.starRating,
+              pokeballType: pokeballType,
             },
           ];
           localStorage.setItem("captureList", JSON.stringify(newPokeList));
@@ -45,6 +47,7 @@ export function handleCapture(pokemon) {
             captured: { capture: true, release: false },
             shiny: pokemon.shiny,
             starRating: pokemon.starRating,
+            pokeballType: pokeballType,
           });
           localStorage.setItem("captureList", JSON.stringify(newPokeList));
         }
