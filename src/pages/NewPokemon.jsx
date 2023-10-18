@@ -29,7 +29,6 @@ function NewPokemon() {
   const [ballHit, setBallHit] = useState(null);
   const [ballSpin, setBallSpin] = useState(false);
   const [isPokeballShown, setIsPokeballShown] = useState(true);
-  const [ballChoice, setBallChoice] = useState(pokeBall);
   const [catchMessage, setCatchMessage] = useState("");
   //LOCAL STORAGE STATES
   const [pokeBallCount, setPokeBallCount] = useState(() => {
@@ -41,6 +40,13 @@ function NewPokemon() {
     const p = localStorage.getItem("pokemon");
     if (p === null) return null;
     return JSON.parse(p);
+  });
+  const [pokeballType, setPokeballType] = useState(() => {
+    const type = localStorage.getItem("captureList");
+    if (type === null) return pokeBall;
+    const results = JSON.parse(type).filter((info) => info.key === pokemon.key);
+    const ballType = results.map((ball) => ball.pokeballType);
+    return ballType;
   });
 
   //UPDATE ANY CHANGES FROM STORAGE AND RENDER ON SCREEN
@@ -89,7 +95,7 @@ function NewPokemon() {
           setIsBallThrown(false);
           //TIMEOUT TO SEE IF POKEMON GETS CAPTURED SUCCESSFULLY
           setTimeout(() => {
-            handleCapture(pokeInfo);
+            handleCapture(pokeInfo, pokeballType);
             //IF POKEMON GOT AWAY
             setCatchMessage("Pokemon got away");
             setTimeout(() => {
@@ -110,6 +116,8 @@ function NewPokemon() {
   function handleGetMorePokeballs() {
     setPokeBallCount(10);
   }
+
+  console.log(pokeballType);
 
   return (
     <>
@@ -224,7 +232,7 @@ function NewPokemon() {
                         src={pokeBall}
                         width="50"
                         className="pokeballPng"
-                        onClick={() => setBallChoice(pokeBall)}
+                        onClick={() => setPokeballType(pokeBall)}
                       />
                     </div>
                     <div className="pokeballAndName">
@@ -233,7 +241,7 @@ function NewPokemon() {
                         src={greatBall}
                         width="50"
                         className="pokeballPng"
-                        onClick={() => setBallChoice(greatBall)}
+                        onClick={() => setPokeballType(greatBall)}
                       />
                     </div>
                     <div className="pokeballAndName">
@@ -242,13 +250,13 @@ function NewPokemon() {
                         src={ultraBall}
                         width="50"
                         className="pokeballPng"
-                        onClick={() => setBallChoice(ultraBall)}
+                        onClick={() => setPokeballType(ultraBall)}
                       />
                     </div>
                     <div className="currentChoice">
                       Current Choice:
                       <img
-                        src={ballChoice}
+                        src={pokeballType}
                         width="50"
                         className={ballSpin ? "rotatingPokeball" : ""}
                       />
@@ -256,6 +264,7 @@ function NewPokemon() {
                   </div>
                   <PokemonCard
                     pokemon={pokemon.pokeInfo}
+                    pokeKey={pokemon.key}
                     state={state}
                     captured={pokemon.captured.capture}
                     setIsCaptured={setIsCaptured}
@@ -265,6 +274,7 @@ function NewPokemon() {
                     starRating={pokemon.starRating}
                     ballHit={ballHit}
                     isPokeballShown={isPokeballShown}
+                    pokeballType={pokeballType}
                   />
                   <div
                     className={
