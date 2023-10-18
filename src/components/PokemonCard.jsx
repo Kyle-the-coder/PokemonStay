@@ -25,6 +25,7 @@ export function PokemonCard({
   ballSpin,
   ballHit,
   isPokeballShown,
+  pokeballType,
 }) {
   const [captureInfo, setCaptureInfo] = useState([]);
   const [moveList, setMoveList] = useState(() => {
@@ -35,6 +36,13 @@ export function PokemonCard({
   const [isInfoDivShown, setIsInfoDivShown] = useState(false);
   const types = pokemon.types.map((type, index) => type.type.name);
   const randId = crypto.randomUUID();
+  // const [pokeballType, setPokeballType] = useState(() => {
+  //   const type = localStorage.getItem("captureList");
+  //   if (type === null) return pokeBallEmpty;
+  //   const results = JSON.parse(type).filter((info) => info.key === pokeKey);
+  //   const ballType = results.map((ball) => ball.pokeballType);
+  //   return ballType;
+  // });
 
   useMemo(() => {
     const moves = moveList?.splice(0, 2);
@@ -64,6 +72,11 @@ export function PokemonCard({
 
   useEffect(() => {
     setIsCaptured(captured);
+    // const type = localStorage.getItem("captureList");
+    // if (type === null) return pokeBallEmpty;
+    // const results = JSON.parse(type).filter((info) => info.key === pokeKey);
+    // const ballType = results.map((ball) => ball.pokeballType);
+    // setPokeballType(ballType);
   }, [state, captureInfo, starRating]);
 
   return (
@@ -133,7 +146,7 @@ export function PokemonCard({
           <div className="pokemonImg">
             {captured && isPokeballShown ? (
               <div className="pokeballSprite">
-                <img src={ballClosed} width="60" />
+                <img src={pokeballType} width="60" />
               </div>
             ) : ballHit === true && ballSpin === false ? (
               <div className="pokemonSprite">
@@ -145,7 +158,7 @@ export function PokemonCard({
               </div>
             ) : ballHit ? (
               <div className="pokeballSprite">
-                <img src={ballClosed} width="60" className="wiggle" />
+                <img src={pokeballType} width="60" className="wiggle" />
               </div>
             ) : (
               <>
@@ -191,7 +204,7 @@ export function PokemonCard({
                   setIsReleased(!isReleased);
                   handleRelease(pokeKey);
                 }}
-                src={captured ? pokeBallFull : pokeBallEmpty}
+                src={captured ? pokeballType : pokeBallEmpty}
                 width="40"
               />
             </div>
