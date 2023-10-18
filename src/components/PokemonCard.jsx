@@ -36,9 +36,9 @@ export function PokemonCard({
   const [isInfoDivShown, setIsInfoDivShown] = useState(false);
   const types = pokemon.types.map((type, index) => type.type.name);
   const randId = crypto.randomUUID();
-  // const [pokeballType, setPokeballType] = useState(() => {
+  // const [ballType, setBallType] = useState(() => {
   //   const type = localStorage.getItem("captureList");
-  //   if (type === null) return pokeBallEmpty;
+  //   if (type === null) return pokeballType;
   //   const results = JSON.parse(type).filter((info) => info.key === pokeKey);
   //   const ballType = results.map((ball) => ball.pokeballType);
   //   return ballType;
@@ -72,11 +72,6 @@ export function PokemonCard({
 
   useEffect(() => {
     setIsCaptured(captured);
-    // const type = localStorage.getItem("captureList");
-    // if (type === null) return pokeBallEmpty;
-    // const results = JSON.parse(type).filter((info) => info.key === pokeKey);
-    // const ballType = results.map((ball) => ball.pokeballType);
-    // setPokeballType(ballType);
   }, [state, captureInfo, starRating]);
 
   return (
