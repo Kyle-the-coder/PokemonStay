@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigation } from "react-router-dom";
 import { PokeList } from "../components/PokeList";
+import pokeBall from "../assets/pokeballFinal.png";
 import "../styles/storage.css";
 
 function Storage() {
