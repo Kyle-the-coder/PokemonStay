@@ -32,12 +32,10 @@ function Home() {
             <h1>Welcome to Pokemon Stay!</h1>
           </div>
           <div className="welcomeInfoContainer">
-            <img src={pokemonStorageImg} width="680" />
+            <img src={pokemonStorageImg} width="55%" />
             <div className="welcomeInfo">
-              <p>
-                A digital card collector game where you have to actually catch
-                the cards in the wild!
-              </p>
+              A digital card collector game where you have to actually catch the
+              cards in the wild!
             </div>
           </div>
           <div className="welcomeBtn">
@@ -48,15 +46,15 @@ function Home() {
           </div>
           <div className="welcomeDisplayInfoContainer">
             <div className="welcomeDisplay">
-              <img src={shinyImg} width="300" />
+              <img src={shinyImg} width="70%" />
               <h1>SHINYS</h1>
             </div>
             <div className="welcomeDisplayGrey">
-              <img src={rarityImg} width="300" />
+              <img src={rarityImg} width="70%" />
               <h1>RARITY</h1>
             </div>
             <div className="welcomeDisplay">
-              <img src={ultraBall} width="300" />
+              <img src={ultraBall} width="70%" />
               <h1>POKEBALLS</h1>
             </div>
           </div>
