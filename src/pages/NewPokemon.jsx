@@ -48,7 +48,6 @@ function NewPokemon() {
     const ballType = results.map((ball) => ball.pokeballType);
     return ballType;
   });
-  const [isPokeballTypeShown, setIsPokeballTypeShown] = useState(false);
 
   //UPDATE ANY CHANGES FROM STORAGE AND RENDER ON SCREEN
   useEffect(() => {
@@ -59,7 +58,6 @@ function NewPokemon() {
     if (isCap !== null) {
       setIsCaptured(JSON.parse(isCap)?.captured.capture);
     }
-    setPokeballType(pokeBall);
   }, [state, ballSpin, catchMessage]);
 
   //RUN AWAY FUNCTION
@@ -275,8 +273,6 @@ function NewPokemon() {
                     ballHit={ballHit}
                     isPokeballShown={isPokeballShown}
                     pokeballType={pokeballType}
-                    isPokeballTypeShown={isPokeballTypeShown}
-                    setIsPokeballTypeShown={setIsPokeballTypeShown}
                   />
                   <div
                     className={
