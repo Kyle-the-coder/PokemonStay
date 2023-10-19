@@ -4,12 +4,9 @@ import { typeList } from "../svg/typeList";
 import axios from "axios";
 import background from "../assets/bg.webp";
 import pokeBallEmpty from "../assets/pokeballEmpty.png";
-import pokeBallFull from "../assets/pokeballFinal.png";
 import oneStar from "../assets/oneStar.png";
 import twoStar from "../assets/twoStar.png";
 import threeStar from "../assets/threeStar.png";
-import ballOpen from "../assets/pokeballOpen.png";
-import ballClosed from "../assets/pokeballFinal.png";
 import "../styles/pokemonCard.css";
 
 export function PokemonCard({
@@ -36,13 +33,13 @@ export function PokemonCard({
   const [isInfoDivShown, setIsInfoDivShown] = useState(false);
   const types = pokemon.types.map((type, index) => type.type.name);
   const randId = crypto.randomUUID();
-  // const [ballType, setBallType] = useState(() => {
-  //   const type = localStorage.getItem("captureList");
-  //   if (type === null) return pokeballType;
-  //   const results = JSON.parse(type).filter((info) => info.key === pokeKey);
-  //   const ballType = results.map((ball) => ball.pokeballType);
-  //   return ballType;
-  // });
+  const [ballType, setBallType] = useState(() => {
+    const type = localStorage.getItem("captureList");
+    if (type === null) return pokeballType;
+    const results = JSON.parse(type).filter((info) => info.key === pokeKey);
+    const ballType = results.map((ball) => ball.pokeballType);
+    return ballType;
+  });
 
   useMemo(() => {
     const moves = moveList?.splice(0, 2);
@@ -141,7 +138,7 @@ export function PokemonCard({
           <div className="pokemonImg">
             {captured && isPokeballShown ? (
               <div className="pokeballSprite">
-                <img src={pokeballType} width="60" />
+                <img src={ballType} width="60" />
               </div>
             ) : ballHit === true && ballSpin === false ? (
               <div className="pokemonSprite">
@@ -153,7 +150,7 @@ export function PokemonCard({
               </div>
             ) : ballHit ? (
               <div className="pokeballSprite">
-                <img src={pokeballType} width="60" className="wiggle" />
+                <img src={ballType} width="60" className="wiggle" />
               </div>
             ) : (
               <>
@@ -199,7 +196,7 @@ export function PokemonCard({
                   setIsReleased(!isReleased);
                   handleRelease(pokeKey);
                 }}
-                src={captured ? pokeballType : pokeBallEmpty}
+                src={captured ? ballType : pokeBallEmpty}
                 width="40"
               />
             </div>
