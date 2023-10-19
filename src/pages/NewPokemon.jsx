@@ -44,7 +44,9 @@ function NewPokemon() {
   const [pokeballType, setPokeballType] = useState(() => {
     const type = localStorage.getItem("captureList");
     if (type === null) return pokeBall;
-    const results = JSON.parse(type).filter((info) => info.key === pokemon.key);
+    const results = JSON.parse(type).filter(
+      (info) => pokemon && info.key === pokemon.key
+    );
     const ballType = results.map((ball) => ball.pokeballType);
     return ballType;
   });
