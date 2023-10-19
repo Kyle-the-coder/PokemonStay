@@ -20,7 +20,7 @@ body.dark-mode {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
   background: linear-gradient(to bottom, #037d5a, #00fcfc);
   margin: 0 auto;
   padding: 1rem 0;
@@ -60,9 +60,10 @@ body.dark-mode {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 60px;
+  align-items: center;
+  padding: 10px;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #000000;
 }
 
@@ -80,7 +81,7 @@ body.dark-mode {
   margin-bottom: 40px;
 }
 .welcomeDisplay {
-  width: 400px;
+  width: 30%;
   height: 100%;
   background-color: #272727;
   display: flex;
@@ -92,7 +93,7 @@ body.dark-mode {
   color: white;
 }
 .welcomeDisplayGrey {
-  width: 400px;
+  width: 30%;
   height: 100%;
   background-color: #7d7d7d;
   display: flex;
