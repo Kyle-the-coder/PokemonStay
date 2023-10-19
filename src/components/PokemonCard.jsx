@@ -42,6 +42,14 @@ export function PokemonCard({
   });
 
   useMemo(() => {
+    const type = localStorage.getItem("captureList");
+    if (type === null) return pokeballType;
+    const results = JSON.parse(type).filter((info) => info.key === pokeKey);
+    const ballType = results.map((ball) => ball.pokeballType);
+    setBallType(ballType);
+  }, [captured]);
+
+  useMemo(() => {
     const moves = moveList?.splice(0, 2);
     async function moves1Url() {
       return await axios
@@ -69,7 +77,7 @@ export function PokemonCard({
 
   useEffect(() => {
     setIsCaptured(captured);
-  }, [state, captureInfo, starRating]);
+  }, [state, captureInfo, starRating, captured]);
 
   return (
     <>
@@ -138,7 +146,7 @@ export function PokemonCard({
           <div className="pokemonImg">
             {captured && isPokeballShown ? (
               <div className="pokeballSprite">
-                <img src={ballType} width="60" />
+                <img src={captured ? ballType : pokeballType} width="60" />
               </div>
             ) : ballHit === true && ballSpin === false ? (
               <div className="pokemonSprite">
@@ -150,7 +158,11 @@ export function PokemonCard({
               </div>
             ) : ballHit ? (
               <div className="pokeballSprite">
-                <img src={ballType} width="60" className="wiggle" />
+                <img
+                  src={captured ? ballType : pokeballType}
+                  width="60"
+                  className="wiggle"
+                />
               </div>
             ) : (
               <>
