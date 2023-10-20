@@ -2,6 +2,7 @@ import { useTheme } from "../context/ThemeContext";
 import pokeBall from "../assets/pokeballFinal.png";
 import greatBall from "../assets/greatballFinal.png";
 import ultraBall from "../assets/ultraballFinal.png";
+import { useEffect, useState } from "react";
 export default function CaptureDisplay({
   pokemon,
   ballHit,
@@ -16,6 +17,16 @@ export default function CaptureDisplay({
   pokeballType,
 }) {
   const { darkMode, toggleDarkMode } = useTheme();
+  const [ballType, setBallType] = useState(pokeballType);
+
+  useEffect(() => {
+    if (typeof pokeballType === "object") {
+      setBallType(pokeballType[0]);
+    } else {
+      setBallType(pokeballType);
+    }
+  }, [pokeballType]);
+
   return (
     <div
       className={
@@ -57,24 +68,24 @@ export default function CaptureDisplay({
       </div>
       <div className="resultDisplay">
         <p className={darkMode ? "lightGreyText" : "darkGreyText"}>
-          {pokeballType === pokeBall
+          {ballType === pokeBall
             ? "Pokeball"
-            : pokeballType === greatBall
+            : ballType === greatBall
             ? "Greatball"
-            : pokeballType === ultraBall
+            : ballType === ultraBall
             ? "Ultraball"
             : "Pokeball"}{" "}
           Count:{" "}
         </p>
         <h3>
           {" "}
-          {pokeballType === pokeBall
+          {ballType === pokeBall
             ? pokeBallCount
-            : pokeballType === greatBall
+            : ballType === greatBall
             ? greatBallCount
-            : pokeballType === ultraBall
+            : ballType === ultraBall
             ? ultraBallCount
-            : "Pokeball"}
+            : pokeBallCount}
         </h3>
       </div>
       <h4>What will you do?</h4>
