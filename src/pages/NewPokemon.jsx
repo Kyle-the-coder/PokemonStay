@@ -118,7 +118,7 @@ function NewPokemon() {
   function handleGetMorePokeballs() {
     setPokeBallCount(10);
   }
-
+  console.log(pokeballType);
   return (
     <>
       <div className="container">
