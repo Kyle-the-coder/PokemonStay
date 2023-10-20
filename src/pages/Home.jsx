@@ -3,11 +3,8 @@ import pokemonStorageImg from "../assets/pokemonStorage.webp";
 import shinyImg from "../assets/stars.png";
 import rarityImg from "../assets/threeStar.png";
 import ultraBall from "../assets/ultraballFinal.png";
-import leaf from "../assets/leaf2.png";
-import lgLeaf from "../assets/leaf3.png";
-import rLeaf from "../assets/reverseLeaf2.png";
-import rLgLeaf from "../assets/reverseLgLeaf.png";
-import { useTheme } from "../context/ThemeContext";
+import LeafDecor2 from "../components/LeafDecor2";
+
 function Home() {
   const navigate = useNavigate();
 
@@ -15,19 +12,7 @@ function Home() {
     <>
       <div className="container">
         <div className="welcomeContainer">
-          <div className="welcomeLeaf">
-            <img src={leaf} width="300" />
-          </div>
-          <div className="welcomeLgLeaf">
-            <img src={lgLeaf} width="700" />
-          </div>
-          <div className="welcomeReverseLeaf">
-            <img src={rLeaf} width="700" />
-          </div>
-          <div className="welcomeReverseLgLeaf">
-            <img src={rLgLeaf} width="400" />
-          </div>
-
+          <LeafDecor2 />
           <div className="welcomeTitle">
             <h1>Welcome to Pokemon Stay!</h1>
           </div>
