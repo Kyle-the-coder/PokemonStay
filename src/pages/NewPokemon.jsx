@@ -18,6 +18,8 @@ import pokeBall from "../assets/pokeballFinal.png";
 import greatBall from "../assets/greatballFinal.png";
 import ultraBall from "../assets/ultraballFinal.png";
 import "../styles/newPokemon.css";
+import PokeBallDisplay from "../components/PokeBallDisplay";
+import CaptureDisplay from "../components/CaptureDisplay";
 
 function NewPokemon() {
   const { state } = useNavigation();
@@ -59,6 +61,9 @@ function NewPokemon() {
     const isCap = localStorage.getItem("pokemon");
     if (isCap !== null) {
       setIsCaptured(JSON.parse(isCap)?.captured.capture);
+    }
+    if (pokeballType.length === 0) {
+      setPokeballType(pokeBall);
     }
   }, [state, ballSpin, catchMessage]);
 
@@ -124,19 +129,19 @@ function NewPokemon() {
       <div className="container">
         <div className="newPokemonContainer">
           <div className="welcomeLeaf">
-            <img src={leaf} width="300" />
+            <img src={leaf} width="270" />
           </div>
           <div className="welcomeLgLeaf2">
             <img src={lgLeaf2} width="300" />
           </div>
           <div className="welcomeLgLeaf">
-            <img src={lgLeaf} width="700" />
+            <img src={lgLeaf} width="600" />
           </div>
           <div className="welcomeReverseLeaf">
-            <img src={rLeaf} width="700" />
+            <img src={rLeaf} width="460" />
           </div>
           <div className="welcomeReverseLgLeaf">
-            <img src={rLgLeaf} width="400" />
+            <img src={rLgLeaf} width="350" />
           </div>
 
           <div className="wildGrassDark1">
@@ -217,51 +222,12 @@ function NewPokemon() {
                   </>
                 )}
                 <div className="uiContainer">
-                  <div
-                    className={
-                      darkMode
-                        ? "pokeballDisplayInfoDark"
-                        : "pokeballDisplayInfoLight"
-                    }
-                  >
-                    <h3>Choose your pokeball:</h3>
+                  <PokeBallDisplay
+                    pokeballType={pokeballType}
+                    setPokeballType={setPokeballType}
+                    ballSpin={ballSpin}
+                  />
 
-                    <div className="pokeballAndName">
-                      <p>Pokeball:</p>
-                      <img
-                        src={pokeBall}
-                        width="50"
-                        className="pokeballPng"
-                        onClick={() => setPokeballType(pokeBall)}
-                      />
-                    </div>
-                    <div className="pokeballAndName">
-                      <p>Greatball:</p>
-                      <img
-                        src={greatBall}
-                        width="50"
-                        className="pokeballPng"
-                        onClick={() => setPokeballType(greatBall)}
-                      />
-                    </div>
-                    <div className="pokeballAndName">
-                      <p>Ultraball:</p>
-                      <img
-                        src={ultraBall}
-                        width="50"
-                        className="pokeballPng"
-                        onClick={() => setPokeballType(ultraBall)}
-                      />
-                    </div>
-                    <div className="currentChoice">
-                      Current Choice:
-                      <img
-                        src={pokeballType}
-                        width="50"
-                        className={ballSpin ? "rotatingPokeball" : ""}
-                      />
-                    </div>
-                  </div>
                   <PokemonCard
                     pokemon={pokemon.pokeInfo}
                     pokeKey={pokemon.key}
@@ -276,81 +242,16 @@ function NewPokemon() {
                     isPokeballShown={isPokeballShown}
                     pokeballType={pokeballType}
                   />
-                  <div
-                    className={
-                      darkMode
-                        ? "captureDisplayInfoDark"
-                        : "captureDisplayInfoLight"
-                    }
-                  >
-                    <div className="resultDisplay">
-                      <p
-                        className={darkMode ? "lightGreyText" : "darkGreyText"}
-                      >
-                        Throw Status:
-                      </p>
-                      <h3>
-                        {isBallThrown ? (
-                          <span className="lightBlueText">
-                            ball is thrown...
-                          </span>
-                        ) : (
-                          "" ||
-                          (ballHit === null ? (
-                            "ball is not thrown..."
-                          ) : ballHit === true ? (
-                            <span className="greenText">ball hit!</span>
-                          ) : (
-                            <span className="redText">ball missed</span>
-                          ))
-                        )}
-                      </h3>
-                    </div>
-                    <div className="resultDisplay">
-                      <p
-                        className={darkMode ? "lightGreyText" : "darkGreyText"}
-                      >
-                        Capture Status:
-                      </p>
-                      <h3 className="captureStatus">
-                        {isCaptured ? (
-                          <span className="greenText">captured!</span>
-                        ) : ballHit === true && ballSpin === false ? (
-                          <span className="redText">Pokemon got out!</span>
-                        ) : (
-                          "not captured"
-                        )}
-                      </h3>
-                    </div>
-                    <div className="resultDisplay">
-                      <p
-                        className={darkMode ? "lightGreyText" : "darkGreyText"}
-                      >
-                        Pokeball Count:{" "}
-                      </p>
-                      <h3>{pokeBallCount}</h3>
-                    </div>
-                    <h4>What will you do?</h4>
-                    <div>
-                      <button
-                        onClick={() => {
-                          handleBallThrown(pokemon.pokeInfo);
-                        }}
-                        className="captureBtn"
-                        disabled={pokemon.captured.capture}
-                      >
-                        Throw Pokeball
-                      </button>
-                      <button
-                        onClick={() => {
-                          handleGetAway();
-                        }}
-                        className="captureBtn"
-                      >
-                        Run
-                      </button>
-                    </div>
-                  </div>
+                  <CaptureDisplay
+                    pokemon={pokemon}
+                    ballHit={ballHit}
+                    ballSpin={ballSpin}
+                    pokeBallCount={pokeBallCount}
+                    handleBallThrown={handleBallThrown}
+                    handleGetAway={handleGetAway}
+                    isBallThrown={isBallThrown}
+                    isCaptured={isCaptured}
+                  />
                 </div>
               </>
             )}
