@@ -38,12 +38,7 @@ function Home() {
               cards in the wild!
             </div>
           </div>
-          <div className="welcomeBtn">
-            {" "}
-            <button onClick={() => navigate("/newpokemon")} className="btn">
-              Get Started
-            </button>
-          </div>
+
           <div className="welcomeDisplayInfoContainer">
             <div className="welcomeDisplay">
               <img src={shinyImg} width="70%" />
@@ -58,6 +53,9 @@ function Home() {
               <h1>POKEBALLS</h1>
             </div>
           </div>
+          <button onClick={() => navigate("/newpokemon")} className="btn">
+            Get Started
+          </button>
         </div>
       </div>
     </>
