@@ -1,14 +1,19 @@
 import { useTheme } from "../context/ThemeContext";
-
+import pokeBall from "../assets/pokeballFinal.png";
+import greatBall from "../assets/greatballFinal.png";
+import ultraBall from "../assets/ultraballFinal.png";
 export default function CaptureDisplay({
   pokemon,
   ballHit,
   ballSpin,
   pokeBallCount,
+  greatBallCount,
+  ultraBallCount,
   handleBallThrown,
   handleGetAway,
   isBallThrown,
   isCaptured,
+  pokeballType,
 }) {
   const { darkMode, toggleDarkMode } = useTheme();
   return (
@@ -52,9 +57,25 @@ export default function CaptureDisplay({
       </div>
       <div className="resultDisplay">
         <p className={darkMode ? "lightGreyText" : "darkGreyText"}>
-          Pokeball Count:{" "}
+          {pokeballType === pokeBall
+            ? "Pokeball"
+            : pokeballType === greatBall
+            ? "Greatball"
+            : pokeballType === ultraBall
+            ? "Ultraball"
+            : "Pokeball"}{" "}
+          Count:{" "}
         </p>
-        <h3>{pokeBallCount}</h3>
+        <h3>
+          {" "}
+          {pokeballType === pokeBall
+            ? pokeBallCount
+            : pokeballType === greatBall
+            ? greatBallCount
+            : pokeballType === ultraBall
+            ? ultraBallCount
+            : "Pokeball"}
+        </h3>
       </div>
       <h4>What will you do?</h4>
       <div>
