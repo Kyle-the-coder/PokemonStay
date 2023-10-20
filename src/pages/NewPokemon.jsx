@@ -5,8 +5,11 @@ import { PokemonCard } from "../components/PokemonCard";
 import { getPokemon } from "../api/getPokemon";
 import { getRandomNum } from "../api/getRandomNum";
 import { v4 as uuidv4 } from "uuid";
-import { handleCapture, handleRun } from "../functions/handleCapture";
+import { handleRun } from "../functions/handleRun";
 import { useTheme } from "../context/ThemeContext";
+import { pokeballHandleCapture } from "../functions/pokeBallHandleCapture";
+import { greatballHandleCapture } from "../functions/greatballHandleCapture";
+import { ultraballHandleCapture } from "../functions/ultraballHandleCapture";
 import leaf from "../assets/leaf2.png";
 import lgLeaf from "../assets/leaf3.png";
 import lgLeaf2 from "../assets/lgLeaf2.png";
@@ -17,9 +20,9 @@ import wildGrass2 from "../assets/wildGrass.png";
 import pokeBall from "../assets/pokeballFinal.png";
 import greatBall from "../assets/greatballFinal.png";
 import ultraBall from "../assets/ultraballFinal.png";
-import "../styles/newPokemon.css";
 import PokeBallDisplay from "../components/PokeBallDisplay";
 import CaptureDisplay from "../components/CaptureDisplay";
+import "../styles/newPokemon.css";
 
 function NewPokemon() {
   const { state } = useNavigation();
@@ -38,6 +41,17 @@ function NewPokemon() {
     if (count === null) return 10;
     return JSON.parse(count);
   });
+  const [greatBallCount, setGreatBallCount] = useState(() => {
+    const count = localStorage.getItem("greatballCount");
+    if (count === null) return 5;
+    return JSON.parse(count);
+  });
+  const [ultraBallCount, setUltraBallCount] = useState(() => {
+    const count = localStorage.getItem("ultraballCount");
+    if (count === null) return 3;
+    return JSON.parse(count);
+  });
+
   const [pokemon, setPokemon] = useState(() => {
     const p = localStorage.getItem("pokemon");
     if (p === null) return null;
@@ -58,6 +72,8 @@ function NewPokemon() {
     const newPokemonInfo = localStorage.getItem("pokemon");
     setPokemon(JSON.parse(newPokemonInfo));
     localStorage.setItem("pokeballCount", pokeBallCount);
+    localStorage.setItem("greatballCount", greatBallCount);
+    localStorage.setItem("ultraballCount", ultraBallCount);
     const isCap = localStorage.getItem("pokemon");
     if (isCap !== null) {
       setIsCaptured(JSON.parse(isCap)?.captured.capture);
@@ -87,9 +103,20 @@ function NewPokemon() {
       handleRun(pokemon);
       //HANDLE POKEBALL THROW IF USER HAS POKEBALLS
     } else if (count > 0) {
-      //LOWER POKEBALL COUNT BY 1
-      setPokeBallCount(pokeBallCount - 1);
-      localStorage.setItem("pokeballCount", pokeBallCount);
+      if (pokeballType === pokeBall) {
+        //LOWER POKEBALL COUNT BY 1
+        setPokeBallCount(pokeBallCount - 1);
+        localStorage.setItem("pokeballCount", pokeBallCount);
+      } else if (pokeballType === greatBall) {
+        //LOWER GREATBALL COUNT BY 1
+        setGreatBallCount(greatBallCount - 1);
+        localStorage.setItem("greatballCount", greatBallCount);
+      } else if (pokeballType === ultraBall) {
+        //LOWER ULTRABALL COUNT BY 1
+        setUltraBallCount(ultraBallCount - 1);
+        localStorage.setItem("ultraballCount", ultraBallCount);
+      }
+
       //START THE ANIMATION
       setBallSpin(true);
       setIsBallThrown(true);
@@ -102,7 +129,14 @@ function NewPokemon() {
           setIsBallThrown(false);
           //TIMEOUT TO SEE IF POKEMON GETS CAPTURED SUCCESSFULLY
           setTimeout(() => {
-            handleCapture(pokeInfo, pokeballType);
+            if (pokeballType === pokeBall) {
+              pokeballHandleCapture(pokeInfo, pokeballType);
+            } else if (pokeballType === greatBall) {
+              greatballHandleCapture(pokeInfo, pokeballType);
+            } else if (pokeballType === ultraBall) {
+              ultraballHandleCapture(pokeInfo, pokeballType);
+            }
+            // handleCapture(pokeInfo, pokeballType);
             //IF POKEMON GOT AWAY
             setCatchMessage("Pokemon got away");
             setTimeout(() => {
@@ -123,7 +157,7 @@ function NewPokemon() {
   function handleGetMorePokeballs() {
     setPokeBallCount(10);
   }
-  console.log(pokeballType);
+
   return (
     <>
       <div className="container">
@@ -160,20 +194,24 @@ function NewPokemon() {
           <div className="title">
             <h1>Search in the wild grass:</h1>
             <Form className="pokeForm" method="post">
-              <input
-                type="text"
-                name="name"
-                className="pokeInput"
-                placeholder="Enter a pokemon's name..."
-                defaultValue={pokemon?.name}
-              />
-              <button className="smallBtn" onClick={() => setBallHit(null)}>
-                submit
-              </button>
+              <div className="p">
+                <input
+                  type="text"
+                  name="name"
+                  className="pokeInput"
+                  placeholder="Enter a pokemon's name..."
+                  defaultValue={pokemon?.name}
+                />
+                <button className="smallBtn" onClick={() => setBallHit(null)}>
+                  submit
+                </button>
+              </div>
+              <div className="errorContainer">
+                <p className="errorMessage">
+                  {errors != null && errors.message}
+                </p>
+              </div>
             </Form>
-          </div>
-          <div className="errorContainer">
-            <p className="errorMessage">{errors != null && errors.message}</p>
           </div>
 
           <div className="resultsContainer">
@@ -247,10 +285,13 @@ function NewPokemon() {
                     ballHit={ballHit}
                     ballSpin={ballSpin}
                     pokeBallCount={pokeBallCount}
+                    greatBallCount={greatBallCount}
+                    ultraBallCount={ultraBallCount}
                     handleBallThrown={handleBallThrown}
                     handleGetAway={handleGetAway}
                     isBallThrown={isBallThrown}
                     isCaptured={isCaptured}
+                    pokeballType={pokeballType}
                   />
                 </div>
               </>
