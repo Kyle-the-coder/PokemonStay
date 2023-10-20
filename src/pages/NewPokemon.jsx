@@ -10,19 +10,13 @@ import { useTheme } from "../context/ThemeContext";
 import { handlePokeballThrow } from "../functions/handlePokeballThrow";
 import { handleGreatballThrow } from "../functions/handleGreatballThrow";
 import { handleUltraballThrow } from "../functions/handleUltraballThrow";
-import leaf from "../assets/leaf2.png";
-import lgLeaf from "../assets/leaf3.png";
-import lgLeaf2 from "../assets/lgLeaf2.png";
-import rLeaf from "../assets/reverseLeaf2.png";
-import rLgLeaf from "../assets/reverseLgLeaf.png";
-import wildGrass from "../assets/wildGrass3.png";
-import wildGrass2 from "../assets/wildGrass.png";
 import pokeBall from "../assets/pokeballFinal.png";
 import greatBall from "../assets/greatballFinal.png";
 import ultraBall from "../assets/ultraballFinal.png";
 import PokeBallDisplay from "../components/PokeBallDisplay";
 import CaptureDisplay from "../components/CaptureDisplay";
 import "../styles/newPokemon.css";
+import LeafDecor from "../components/LeafDecor";
 
 function NewPokemon() {
   const { state } = useNavigation();
@@ -137,34 +131,7 @@ function NewPokemon() {
     <>
       <div className="container">
         <div className="newPokemonContainer">
-          <div className="welcomeLeaf">
-            <img src={leaf} width="270" />
-          </div>
-          <div className="welcomeLgLeaf2">
-            <img src={lgLeaf2} width="300" />
-          </div>
-          <div className="welcomeLgLeaf">
-            <img src={lgLeaf} width="600" />
-          </div>
-          <div className="welcomeReverseLeaf">
-            <img src={rLeaf} width="460" />
-          </div>
-          <div className="welcomeReverseLgLeaf">
-            <img src={rLgLeaf} width="350" />
-          </div>
-
-          <div className="wildGrassDark1">
-            <img src={wildGrass2} width="400" />
-          </div>
-          <div className="wildGrassDark2">
-            <img src={wildGrass2} width="400" />
-          </div>
-          <div className="wildGrass1">
-            <img src={wildGrass} width="400" />
-          </div>
-          <div className="wildGrass2">
-            <img src={wildGrass} width="400" />
-          </div>
+          <LeafDecor />
 
           <div className="title">
             <h1>Search in the wild grass:</h1>
