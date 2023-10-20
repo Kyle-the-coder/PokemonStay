@@ -7,7 +7,6 @@ export function ThemeProvider({ children }) {
   const [darkMode, setDarkMode] = useState(() => {
     const isDark = localStorage.getItem("isDarkMode");
     if (isDark == null) return false;
-    console.log(isDark);
     return JSON.parse(isDark);
   });
 
