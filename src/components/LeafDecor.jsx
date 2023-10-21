@@ -26,16 +26,16 @@ export default function LeafDecor() {
       </div>
 
       <div className="wildGrassDark1">
-        <img src={wildGrass2} width="400" />
+        <img src={wildGrass2} width="388" />
       </div>
       <div className="wildGrassDark2">
-        <img src={wildGrass2} width="400" />
+        <img src={wildGrass2} width="388" />
       </div>
       <div className="wildGrass1">
-        <img src={wildGrass} width="400" />
+        <img src={wildGrass} width="500" />
       </div>
       <div className="wildGrass2">
-        <img src={wildGrass} width="400" />
+        <img src={wildGrass} width="500" />
       </div>
     </>
   );
