@@ -3,7 +3,7 @@ import pokeBall from "../assets/pokeballFinal.png";
 import greatBall from "../assets/greatballFinal.png";
 import ultraBall from "../assets/ultraballFinal.png";
 import { useEffect, useState } from "react";
-import { Imgs } from "./ImgObject";
+import { Imgs } from "../functions/ImgObject";
 export default function CaptureDisplay({
   pokemon,
   ballHit,
