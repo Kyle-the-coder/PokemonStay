@@ -1,6 +1,6 @@
 import { Form } from "react-router-dom";
 
-export function PokeInput(setBallHit, { errors, pokemon }) {
+export function PokeInput({ setBallHit, errors, pokemon }) {
   return (
     <div className="title">
       <h1>Search in the wild grass:</h1>
