@@ -192,13 +192,15 @@
 
 .wildGrass1 {
   position: absolute;
-  left: 25%;
-  top: 250px;
+  top: 50%; /* Move the top edge to the vertical center of the screen */
+  left: 50%; /* Move the left edge to the horizontal center of the screen */
+  transform: translate(-50%, -50%);
 }
 .wildGrass2 {
   position: absolute;
-  left: 45%;
-  top: 250px;
+  top: 50%; /* Move the top edge to the vertical center of the screen */
+  left: 50%; /* Move the left edge to the horizontal center of the screen */
+  transform: translate(-50%, -50%);
 }
 
 .wildGrassDark1 {
