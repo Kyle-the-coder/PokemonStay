@@ -75,6 +75,9 @@ function NewPokemon() {
     if (pokeballType.length === 0) {
       setPokeballType(Imgs.pokeBall);
     }
+    if (state === "submitting") {
+      setCatchMessage("");
+    }
   }, [state, ballSpin, catchMessage]);
 
   //RUN AWAY FUNCTION
@@ -84,6 +87,7 @@ function NewPokemon() {
   }
   //HANDLE POKEBALL THROW FUNCTION
   function handleBallThrown(pokeInfo) {
+    setCatchMessage("");
     if (pokeballType === Imgs.pokeBall) {
       handlePokeballThrow(
         setBallHit,
@@ -141,7 +145,11 @@ function NewPokemon() {
 
           <div className="resultsContainer">
             {pokemon === null ? (
-              <RunResults />
+              <RunResults
+                catchMessage={catchMessage}
+                pokeBallCount={pokeBallCount}
+                handleGetMorePokeballs={handleGetMorePokeballs}
+              />
             ) : (
               <>
                 {pokemon && <FoundResults pokemon={pokemon} />}
