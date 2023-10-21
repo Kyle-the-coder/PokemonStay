@@ -3,6 +3,7 @@ import pokeBall from "../assets/pokeballFinal.png";
 import greatBall from "../assets/greatballFinal.png";
 import ultraBall from "../assets/ultraballFinal.png";
 import { useEffect, useState } from "react";
+import { Imgs } from "./ImgObject";
 export default function CaptureDisplay({
   pokemon,
   ballHit,
@@ -34,6 +35,9 @@ export default function CaptureDisplay({
       }
     >
       <div className="resultDisplay">
+        <div className="resultDisplayImg">
+          <img src={Imgs.charmander} width="50px" />
+        </div>
         <p className={darkMode ? "lightGreyText" : "darkGreyText"}>
           Throw Status:
         </p>
