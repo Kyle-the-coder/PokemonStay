@@ -8,11 +8,14 @@ export default function RunResults({
   return (
     <>
       <div className="resultsContainer">
-        <h1>{catchMessage}</h1>
-        <h1>Pokeball Count: {pokeBallCount}</h1>
+        <h2>{catchMessage}</h2>
+        <h2>Pokeball Count: {pokeBallCount}</h2>
         {pokeBallCount === 0 ? (
           <>
-            <button className="btn" onClick={() => handleGetMorePokeballs()}>
+            <button
+              className="smallBtn"
+              onClick={() => handleGetMorePokeballs()}
+            >
               Get More Pokeballs
             </button>
           </>
