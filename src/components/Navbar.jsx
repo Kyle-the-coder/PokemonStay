@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
-import { Imgs } from "./ImgObject";
+import { Imgs } from "../functions/ImgObject";
 import "../styles/toggle.css";
 import "../styles/navbar.css";
 
