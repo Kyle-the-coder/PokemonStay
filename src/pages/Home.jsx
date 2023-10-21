@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Imgs } from "../components/ImgObject";
+import { Imgs } from "../functions/ImgObject";
 import pokemonStorageImg from "../assets/pokemonStorage.webp";
 import LeafDecor2 from "../components/LeafDecor2";
 
