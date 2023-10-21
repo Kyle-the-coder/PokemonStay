@@ -17,6 +17,9 @@ import PokeBallDisplay from "../components/PokeBallDisplay";
 import CaptureDisplay from "../components/CaptureDisplay";
 import "../styles/newPokemon.css";
 import LeafDecor from "../components/LeafDecor";
+import RunResults from "../components/RunResults";
+import FoundResults from "../components/FoundResults";
+import { PokeInput } from "../components/PokeInput";
 
 function NewPokemon() {
   const { state } = useNavigation();
@@ -133,74 +136,19 @@ function NewPokemon() {
         <div className="newPokemonContainer">
           <LeafDecor />
 
-          <div className="title">
-            <h1>Search in the wild grass:</h1>
-            <Form className="pokeForm" method="post">
-              <div className="p">
-                <input
-                  type="text"
-                  name="name"
-                  className="pokeInput"
-                  placeholder="Enter a pokemon's name..."
-                  defaultValue={pokemon?.name}
-                />
-                <button className="smallBtn" onClick={() => setBallHit(null)}>
-                  submit
-                </button>
-              </div>
-              <div className="errorContainer">
-                <p className="errorMessage">
-                  {errors != null && errors.message}
-                </p>
-              </div>
-            </Form>
-          </div>
+          <PokeInput
+            pokemon={pokemon}
+            setBallHit={setBallHit}
+            errors={errors}
+          />
 
           <div className="resultsContainer">
             {pokemon === null ? (
-              <>
-                <div className="resultsContainer">
-                  <h1>{catchMessage}</h1>
-                  <h1>Pokeball Count: {pokeBallCount}</h1>
-                  {pokeBallCount === 0 ? (
-                    <>
-                      <button
-                        className="btn"
-                        onClick={() => handleGetMorePokeballs()}
-                      >
-                        Get More Pokeballs
-                      </button>
-                    </>
-                  ) : (
-                    ""
-                  )}
-                  <EmptyCard />
-                </div>
-              </>
+              <RunResults />
             ) : (
               <>
-                {pokemon && (
-                  <>
-                    <div className="textWhite">
-                      {pokemon.shiny ? <h1>Wow!</h1> : ""}
-                    </div>
-                    <h1 className="textWhite">
-                      {pokemon.captured.capture === true
-                        ? `You Caught a wild ${pokemon.shiny ? "Shiny " : ""}
-                    ${
-                      pokemon?.pokeInfo.name.charAt(0).toUpperCase() +
-                      pokemon?.pokeInfo.name.slice(1).toLowerCase()
-                    }
-                    ! `
-                        : `You Found a wild ${pokemon.shiny ? "Shiny " : ""}
-                    ${
-                      pokemon?.pokeInfo.name.charAt(0).toUpperCase() +
-                      pokemon?.pokeInfo.name.slice(1).toLowerCase()
-                    }
-                    ! `}
-                    </h1>
-                  </>
-                )}
+                {pokemon && <FoundResults pokemon={pokemon} />}
+
                 <div className="uiContainer">
                   <PokeBallDisplay
                     pokeballType={pokeballType}
@@ -259,9 +207,9 @@ async function action({ request }) {
   //HANDLE SHINY CHANCE
   let isShiny = null;
   const shinyRand = getRandomNum();
-  if (shinyRand >= 5) {
+  if (shinyRand >= 8) {
     isShiny = true;
-  } else if (shinyRand < 5) {
+  } else if (shinyRand < 8) {
     isShiny = false;
   }
 
