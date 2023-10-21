@@ -10,7 +10,7 @@ import { handlePokeballThrow } from "../functions/handlePokeballThrow";
 import { handleGreatballThrow } from "../functions/handleGreatballThrow";
 import { handleUltraballThrow } from "../functions/handleUltraballThrow";
 import { PokeInput } from "../components/PokeInput";
-import { Imgs } from "../components/ImgObject";
+import { Imgs } from "../functions/ImgObject";
 import PokeBallDisplay from "../components/PokeBallDisplay";
 import CaptureDisplay from "../components/CaptureDisplay";
 import LeafDecor from "../components/LeafDecor";
