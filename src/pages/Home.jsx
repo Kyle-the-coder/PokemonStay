@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { Imgs } from "../components/ImgObject";
 import pokemonStorageImg from "../assets/pokemonStorage.webp";
-import shinyImg from "../assets/stars.png";
-import rarityImg from "../assets/threeStar.png";
-import ultraBall from "../assets/ultraballFinal.png";
 import LeafDecor2 from "../components/LeafDecor2";
 
 function Home() {
@@ -26,15 +24,15 @@ function Home() {
 
           <div className="welcomeDisplayInfoContainer">
             <div className="welcomeDisplay">
-              <img src={shinyImg} width="70%" />
+              <img src={Imgs.shinyImg} width="70%" />
               <h1>SHINYS</h1>
             </div>
             <div className="welcomeDisplayGrey">
-              <img src={rarityImg} width="70%" />
+              <img src={Imgs.rarityImg} width="70%" />
               <h1>RARITY</h1>
             </div>
             <div className="welcomeDisplay">
-              <img src={ultraBall} width="70%" />
+              <img src={Imgs.ultraBall} width="70%" />
               <h1>POKEBALLS</h1>
             </div>
           </div>
