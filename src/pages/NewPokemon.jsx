@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Form, useActionData, useNavigation } from "react-router-dom";
-import { EmptyCard } from "../components/EmptyCard";
+import { useActionData, useNavigation } from "react-router-dom";
 import { PokemonCard } from "../components/PokemonCard";
 import { getPokemon } from "../api/getPokemon";
 import { getRandomNum } from "../api/getRandomNum";
@@ -10,16 +9,14 @@ import { useTheme } from "../context/ThemeContext";
 import { handlePokeballThrow } from "../functions/handlePokeballThrow";
 import { handleGreatballThrow } from "../functions/handleGreatballThrow";
 import { handleUltraballThrow } from "../functions/handleUltraballThrow";
-import pokeBall from "../assets/pokeballFinal.png";
-import greatBall from "../assets/greatballFinal.png";
-import ultraBall from "../assets/ultraballFinal.png";
+import { PokeInput } from "../components/PokeInput";
+import { Imgs } from "../components/ImgObject";
 import PokeBallDisplay from "../components/PokeBallDisplay";
 import CaptureDisplay from "../components/CaptureDisplay";
-import "../styles/newPokemon.css";
 import LeafDecor from "../components/LeafDecor";
 import RunResults from "../components/RunResults";
 import FoundResults from "../components/FoundResults";
-import { PokeInput } from "../components/PokeInput";
+import "../styles/newPokemon.css";
 
 function NewPokemon() {
   const { state } = useNavigation();
@@ -56,7 +53,7 @@ function NewPokemon() {
   });
   const [pokeballType, setPokeballType] = useState(() => {
     const type = localStorage.getItem("captureList");
-    if (type === null) return pokeBall;
+    if (type === null) return Imgs.pokeBall;
     const results = JSON.parse(type).filter(
       (info) => pokemon && info.key === pokemon.key
     );
@@ -76,7 +73,7 @@ function NewPokemon() {
       setIsCaptured(JSON.parse(isCap)?.captured.capture);
     }
     if (pokeballType.length === 0) {
-      setPokeballType(pokeBall);
+      setPokeballType(Imgs.pokeBall);
     }
   }, [state, ballSpin, catchMessage]);
 
@@ -87,7 +84,7 @@ function NewPokemon() {
   }
   //HANDLE POKEBALL THROW FUNCTION
   function handleBallThrown(pokeInfo) {
-    if (pokeballType === pokeBall) {
+    if (pokeballType === Imgs.pokeBall) {
       handlePokeballThrow(
         setBallHit,
         setBallSpin,
@@ -99,7 +96,7 @@ function NewPokemon() {
         pokeballType,
         pokemon
       );
-    } else if (pokeballType === greatBall) {
+    } else if (pokeballType === Imgs.greatBall) {
       handleGreatballThrow(
         setBallHit,
         setBallSpin,
@@ -111,7 +108,7 @@ function NewPokemon() {
         pokeballType,
         pokemon
       );
-    } else if (pokeballType === ultraBall) {
+    } else if (pokeballType === Imgs.ultraBall) {
       handleUltraballThrow(
         setBallHit,
         setBallSpin,
