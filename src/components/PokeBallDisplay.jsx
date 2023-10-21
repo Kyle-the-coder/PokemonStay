@@ -2,6 +2,7 @@ import pokeBall from "../assets/pokeballFinal.png";
 import greatBall from "../assets/greatballFinal.png";
 import ultraBall from "../assets/ultraballFinal.png";
 import { useTheme } from "../context/ThemeContext";
+import { Imgs } from "./ImgObject";
 
 export default function PokeBallDisplay({
   pokeballType,
@@ -15,6 +16,8 @@ export default function PokeBallDisplay({
         darkMode ? "pokeballDisplayInfoDark" : "pokeballDisplayInfoLight"
       }
     >
+      <img src={Imgs.squirtle} width="50px" />
+
       <h3>Choose your pokeball:</h3>
 
       <div className="pokeballAndName">
