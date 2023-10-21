@@ -1,5 +1,6 @@
 import { getRandomNum } from "../api/getRandomNum";
 import { v4 as uuidv4 } from "uuid";
+import { handleRun } from "./handleRun";
 
 export function greatballHandleCapture(pokemon, pokeballType) {
   const randomUUID = uuidv4();
