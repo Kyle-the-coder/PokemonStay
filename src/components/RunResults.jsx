@@ -13,8 +13,8 @@ export default function RunResults({
   return (
     <>
       <div className="resultsContainer">
-        <h2>{catchMessage}</h2>
-        <h2>Pokeball Count: {pokeBallCount}</h2>
+        <h2 className="mb2">{catchMessage}</h2>
+
         {pokeBallCount === 0 ? (
           <>
             <button
@@ -27,7 +27,7 @@ export default function RunResults({
         ) : (
           ""
         )}
-        <div className="uiContainer">
+        <div className="uiContainerRun">
           <PokeBallDisplay />
           <EmptyCard />
           <PokeBallDisplay />
