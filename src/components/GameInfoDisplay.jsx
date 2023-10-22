@@ -14,7 +14,7 @@ export default function GameInfoDisplay() {
     >
       <img src={Imgs.squirtle} width="50px" />
       <div className="gameInfoDisplayInfo">
-        <h3>Welcome To Pokemon Stay!</h3>
+        <h4>Welcome To Pokemon Stay!</h4>
         <p>
           Here you can search for a pokemon's name at the top bar. You have a
           small chance for a shiny, once a pokemon is found you can pick your
