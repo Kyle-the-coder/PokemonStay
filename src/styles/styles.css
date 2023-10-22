@@ -106,27 +106,6 @@ body.dark-mode {
   margin-top: 10px;
 }
 
-.welcomeLeaf {
-  position: absolute;
-  left: -100px;
-  z-index: 3;
-}
-.welcomeLgLeaf {
-  position: absolute;
-  left: -200px;
-  top: 250px;
-}
-.welcomeReverseLeaf {
-  position: absolute;
-  right: -200px;
-  top: 250px;
-}
-.welcomeReverseLgLeaf {
-  position: absolute;
-  right: -200px;
-  top: 10px;
-}
-
 .btn {
   padding: 15px 30px 15px 30px;
   background-color: hsl(286, 82%, 73%);
