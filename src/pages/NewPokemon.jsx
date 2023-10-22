@@ -149,6 +149,9 @@ function NewPokemon() {
                 catchMessage={catchMessage}
                 pokeBallCount={pokeBallCount}
                 handleGetMorePokeballs={handleGetMorePokeballs}
+                pokeballType={pokeballType}
+                setPokeballType={setPokeballType}
+                ballSpin={ballSpin}
               />
             ) : (
               <>
