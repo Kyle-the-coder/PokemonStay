@@ -1,0 +1,38 @@
+.gameInfoDisplayContainerDark {
+  width: 300px;
+  background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 10px;
+  border-radius: 2rem;
+  color: white;
+  border: 2px solid #e3e3e3;
+}
+.gameInfoDisplayContainerLight {
+  width: 300px;
+  background-color: #e3e3e3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 2rem;
+  color: black;
+  border: 2px solid #272727;
+}
+.gameInfoDisplayInfo {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gameInfoDisplayInfo > h4 {
+  margin-top: 20px;
+}
+.gameInfoDisplayInfo > p {
+  font-size: 0.9rem;
+  margin-top: 20px;
+}

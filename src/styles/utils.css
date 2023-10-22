@@ -1,0 +1,24 @@
+.redText {
+  color: rgb(255, 86, 86);
+}
+.greenText {
+  color: rgb(40, 199, 40);
+}
+.lightBlueText {
+  color: rgb(58, 175, 244);
+}
+.lightGreyText {
+  color: rgb(197, 197, 197);
+}
+.darkGreyText {
+  color: rgb(62, 62, 62);
+}
+.goldText {
+  color: rgb(240, 240, 57);
+}
+.mb2 {
+  margin-bottom: 20px;
+}
+.tinyBtn {
+  padding: 3px 5px 3px 5px;
+}
