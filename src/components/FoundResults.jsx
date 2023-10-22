@@ -1,6 +1,6 @@
 export default function FoundResults({ pokemon }) {
   return (
-    <>
+    <div className="foundResultsContainer">
       {pokemon.captured.capture === true ? (
         <h1 className="textWhite">
           You Caught a wild{" "}
@@ -18,6 +18,6 @@ export default function FoundResults({ pokemon }) {
           {pokemon.shiny ? "!" : ""}{" "}
         </h1>
       )}
-    </>
+    </div>
   );
 }
