@@ -158,7 +158,7 @@ function NewPokemon() {
               <>
                 {pokemon && <FoundResults pokemon={pokemon} />}
 
-                <div className="uiContainer">
+                <div className="uiContainerFound">
                   <PokeBallDisplay
                     pokeballType={pokeballType}
                     setPokeballType={setPokeballType}
