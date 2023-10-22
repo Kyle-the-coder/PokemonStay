@@ -1,0 +1,20 @@
+.welcomeLeaf {
+  position: absolute;
+  left: -100px;
+  z-index: 3;
+}
+.welcomeLgLeaf {
+  position: absolute;
+  left: -200px;
+  top: 250px;
+}
+.welcomeReverseLeaf {
+  position: absolute;
+  right: -200px;
+  top: 250px;
+}
+.welcomeReverseLgLeaf {
+  position: absolute;
+  right: -200px;
+  top: 10px;
+}
