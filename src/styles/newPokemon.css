@@ -187,7 +187,9 @@
 .rotatingPokeball {
   animation: rotate 3s linear infinite;
 }
-
+.foundResultsContainer {
+  height: 80px;
+}
 @keyframes rotate {
   from {
     transform: rotate(0deg); /* Start with no rotation (0 degrees) */
