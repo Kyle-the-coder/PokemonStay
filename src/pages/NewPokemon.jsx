@@ -17,6 +17,7 @@ import LeafDecor from "../components/LeafDecor";
 import RunResults from "../components/RunResults";
 import FoundResults from "../components/FoundResults";
 import "../styles/newPokemon.css";
+import "../styles/newPokemonLeafDecor.css";
 
 function NewPokemon() {
   const { state } = useNavigation();
