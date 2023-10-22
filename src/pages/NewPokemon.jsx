@@ -127,10 +127,6 @@ function NewPokemon() {
       );
     }
   }
-  //FUNCTION FOR GETTING MORE POKEBALLS
-  function handleGetMorePokeballs() {
-    setPokeBallCount(10);
-  }
 
   return (
     <>
@@ -146,14 +142,7 @@ function NewPokemon() {
 
           <div className="resultsContainer">
             {pokemon === null ? (
-              <RunResults
-                catchMessage={catchMessage}
-                pokeBallCount={pokeBallCount}
-                handleGetMorePokeballs={handleGetMorePokeballs}
-                pokeballType={pokeballType}
-                setPokeballType={setPokeballType}
-                ballSpin={ballSpin}
-              />
+              <RunResults catchMessage={catchMessage} />
             ) : (
               <>
                 {pokemon && <FoundResults pokemon={pokemon} />}
