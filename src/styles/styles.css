@@ -134,21 +134,7 @@ body.dark-mode {
 .recentSearchListContainer {
   margin-top: 40px;
 }
-.redText {
-  color: rgb(255, 86, 86);
-}
-.greenText {
-  color: rgb(40, 199, 40);
-}
-.lightBlueText {
-  color: rgb(58, 175, 244);
-}
-.lightGreyText {
-  color: rgb(197, 197, 197);
-}
-.darkGreyText {
-  color: rgb(62, 62, 62);
-}
+
 .hoverInfo {
   width: 50px;
   height: 50px;
