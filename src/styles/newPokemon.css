@@ -164,56 +164,6 @@
   justify-content: space-evenly;
 }
 
-.welcomeLeaf {
-  position: absolute;
-  left: -100px;
-  z-index: 3;
-}
-.welcomeLgLeaf {
-  position: absolute;
-  left: -200px;
-  top: 250px;
-}
-.welcomeLgLeaf2 {
-  position: absolute;
-  left: -200px;
-  top: 250px;
-}
-.welcomeReverseLeaf {
-  position: absolute;
-  right: -200px;
-  top: 250px;
-}
-.welcomeReverseLgLeaf {
-  position: absolute;
-  right: -200px;
-  top: 10px;
-}
-
-.wildGrass1 {
-  position: absolute;
-  top: 50%; /* Move the top edge to the vertical center of the screen */
-  left: 50%; /* Move the left edge to the horizontal center of the screen */
-  transform: translate(-50%, -50%);
-}
-.wildGrass2 {
-  position: absolute;
-  top: 50%; /* Move the top edge to the vertical center of the screen */
-  left: 50%; /* Move the left edge to the horizontal center of the screen */
-  transform: translate(-50%, -50%);
-}
-
-.wildGrassDark1 {
-  position: absolute;
-  left: 24.8%;
-  top: 300px;
-}
-.wildGrassDark2 {
-  position: absolute;
-  left: 44.8%;
-  top: 300px;
-}
-
 .textWhite {
   color: white;
 }
