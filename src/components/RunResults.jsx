@@ -1,5 +1,6 @@
 import CaptureDisplay from "./CaptureDisplay";
 import { EmptyCard } from "./EmptyCard";
+import GameInfoDisplay from "./GameInfoDisplay";
 import PokeBallDisplay from "./PokeBallDisplay";
 
 export default function RunResults({
@@ -13,9 +14,11 @@ export default function RunResults({
   return (
     <>
       <div className="resultsContainer">
-        <h2 className="mb2">{catchMessage}</h2>
+        <div className="foundResultsContainer">
+          <h1 className="textWhite">{catchMessage}</h1>
+        </div>
 
-        {pokeBallCount === 0 ? (
+        {/* {pokeBallCount === 0 ? (
           <>
             <button
               className="smallBtn"
@@ -26,9 +29,9 @@ export default function RunResults({
           </>
         ) : (
           ""
-        )}
+        )} */}
         <div className="uiContainerRun">
-          <PokeBallDisplay />
+          <GameInfoDisplay />
           <EmptyCard />
           <PokeBallDisplay />
         </div>
