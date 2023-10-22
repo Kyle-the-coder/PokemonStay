@@ -1,9 +1,14 @@
+import CaptureDisplay from "./CaptureDisplay";
 import { EmptyCard } from "./EmptyCard";
+import PokeBallDisplay from "./PokeBallDisplay";
 
 export default function RunResults({
   catchMessage,
   pokeBallCount,
   handleGetMorePokeballs,
+  pokeballType,
+  setPokeballType,
+  ballSpin,
 }) {
   return (
     <>
@@ -22,7 +27,11 @@ export default function RunResults({
         ) : (
           ""
         )}
-        <EmptyCard />
+        <div className="uiContainer">
+          <PokeBallDisplay />
+          <EmptyCard />
+          <PokeBallDisplay />
+        </div>
       </div>
     </>
   );
