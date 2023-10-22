@@ -47,7 +47,7 @@
 }
 .errorContainer {
   width: 100%;
-  height: 50px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,9 +76,16 @@
   margin-bottom: 20px;
 }
 
-.uiContainer {
+.uiContainerRun {
   width: 100%;
   z-index: 1;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+.uiContainerFound {
+  width: 100%;
+  z-index: 3;
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 30px;
