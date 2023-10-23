@@ -1,24 +1,25 @@
-.welcomeLeaf {
+.newPLeaf {
   position: absolute;
   left: -100px;
   z-index: 3;
 }
-.welcomeLgLeaf {
+.newPLgLeaf {
   position: absolute;
   left: -200px;
   top: 250px;
 }
-.welcomeLgLeaf2 {
+.newPLgLeaf2 {
   position: absolute;
   left: -200px;
-  top: 250px;
+  top: 200px;
+  z-index: 1;
 }
-.welcomeReverseLeaf {
+.newPReverseLeaf {
   position: absolute;
   right: -200px;
   top: 250px;
 }
-.welcomeReverseLgLeaf {
+.newPReverseLgLeaf {
   position: absolute;
   right: -200px;
   top: 10px;
@@ -26,14 +27,14 @@
 
 .wildGrass1 {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
 .wildGrass2 {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 45%;
   transform: translate(-50%, -50%);
 }
