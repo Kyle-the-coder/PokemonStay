@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   padding: 10px;
   border-radius: 2rem;
   color: white;
@@ -16,7 +15,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 10px;
   border-radius: 2rem;
   color: black;
@@ -33,6 +31,6 @@
   margin-top: 20px;
 }
 .gameInfoDisplayInfo > p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin-top: 20px;
 }
