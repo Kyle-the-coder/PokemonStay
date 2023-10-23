@@ -98,7 +98,7 @@ export default function CaptureDisplay({
           onClick={() => {
             handleBallThrown(pokemon.pokeInfo);
           }}
-          className="captureBtn"
+          className={pokemon.captured.capture ? "disabledBtn" : "captureBtn"}
           disabled={pokemon.captured.capture}
         >
           Throw Pokeball
