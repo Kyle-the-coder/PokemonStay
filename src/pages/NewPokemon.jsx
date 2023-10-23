@@ -67,6 +67,10 @@ function NewPokemon() {
     const newPokemonInfo = localStorage.getItem("pokemon");
     setPokemon(JSON.parse(newPokemonInfo));
 
+    localStorage.setItem("pokeballCount", pokeBallCount);
+    localStorage.setItem("greatballCount", greatBallCount);
+    localStorage.setItem("ultraballCount", ultraBallCount);
+
     const isCap = localStorage.getItem("pokemon");
     if (isCap !== null) {
       setIsCaptured(JSON.parse(isCap)?.captured.capture);
@@ -140,7 +144,15 @@ function NewPokemon() {
 
           <div className="resultsContainer">
             {pokemon === null ? (
-              <RunResults catchMessage={catchMessage} />
+              <RunResults
+                catchMessage={catchMessage}
+                pokeBallCount={pokeBallCount}
+                setPokeBallCount={setPokeBallCount}
+                greatBallCount={greatBallCount}
+                setGreatBallCount={setGreatBallCount}
+                ultraBallCount={ultraBallCount}
+                setUltraBallCount={setUltraBallCount}
+              />
             ) : (
               <>
                 {pokemon && <FoundResults pokemon={pokemon} />}
