@@ -4,7 +4,15 @@ import GameInfoDisplay from "./GameInfoDisplay";
 import PokeballAmountDisplay from "./PokeballAmountDisplay";
 import PokeBallDisplay from "./PokeBallDisplay";
 
-export default function RunResults({ catchMessage }) {
+export default function RunResults({
+  catchMessage,
+  pokeBallCount,
+  setPokeBallCount,
+  greatBallCount,
+  setGreatBallCount,
+  ultraBallCount,
+  setUltraBallCount,
+}) {
   return (
     <>
       <div className="resultsContainer">
@@ -15,7 +23,14 @@ export default function RunResults({ catchMessage }) {
         <div className="uiContainerRun">
           <GameInfoDisplay />
           <EmptyCard />
-          <PokeballAmountDisplay />
+          <PokeballAmountDisplay
+            pokeBallCount={pokeBallCount}
+            setPokeBallCount={setPokeBallCount}
+            greatBallCount={greatBallCount}
+            setGreatBallCount={setGreatBallCount}
+            ultraBallCount={ultraBallCount}
+            setUltraBallCount={setUltraBallCount}
+          />
         </div>
       </div>
     </>
