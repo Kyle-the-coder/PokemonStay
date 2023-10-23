@@ -29,3 +29,14 @@
   font-weight: bold;
   z-index: 1;
 }
+
+.disabledBtn {
+  padding: 3px 5px 3px 5px;
+  background-color: hsl(356, 84%, 66%);
+  border-radius: 0.9rem;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1;
+}
