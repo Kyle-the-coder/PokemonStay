@@ -42,12 +42,14 @@ export default function PokeballAmountDisplay({
   return (
     <div
       className={
-        darkMode ? "pokeballDisplayInfoDark" : "pokeballDisplayInfoLight"
+        darkMode
+          ? "pokeballAmountDisplayContainerDark"
+          : "pokeballAmountDisplayContainerLight"
       }
     >
       <img src={Imgs.charmander} width="50px" />
 
-      <h3>Choose your pokeball:</h3>
+      <h3>Get More Pokeballs here:</h3>
 
       <div className="pokeballAndNameAmount">
         <p>Pokeball:</p>
@@ -57,9 +59,7 @@ export default function PokeballAmountDisplay({
           className="pokeballPng"
           onClick={() => setPokeballType("Pokeballs")}
         />
-        <p>
-          Count: <span>{pokeBallCount}</span>
-        </p>
+        <p className="countContainer">Count: {pokeBallCount}</p>
       </div>
       <div className="pokeballAndNameAmount">
         <p>Greatball:</p>
@@ -69,9 +69,7 @@ export default function PokeballAmountDisplay({
           className="pokeballPng"
           onClick={() => setPokeballType("Greatballs")}
         />
-        <p>
-          Count: <span>{greatBallCount}</span>
-        </p>
+        <p className="countContainer">Count: {greatBallCount}</p>
       </div>
       <div className="pokeballAndNameAmount">
         <p>Ultraball:</p>
@@ -81,14 +79,16 @@ export default function PokeballAmountDisplay({
           className="pokeballPng"
           onClick={() => setPokeballType("Ultraballs")}
         />
-        <p>
-          Count: <span>{ultraBallCount}</span>
-        </p>
+        <p className="countContainer">Count: {ultraBallCount}</p>
       </div>
 
       <button
-        className="tinyBtn"
         disabled={pokeBtnDisabled || greatBtnDisabled || ultraBtnDisabled}
+        className={
+          pokeBtnDisabled || greatBtnDisabled || ultraBtnDisabled
+            ? "disabledBtn"
+            : "tinyBtn"
+        }
         onClick={() => handleGetMorePokeballs()}
       >
         Get More {pokeballType}
