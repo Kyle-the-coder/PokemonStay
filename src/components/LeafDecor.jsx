@@ -9,19 +9,19 @@ import wildGrass2 from "../assets/wildGrass.png";
 export default function LeafDecor() {
   return (
     <>
-      <div className="welcomeLeaf">
+      <div className="newPLeaf">
         <img src={leaf} width="270" />
       </div>
-      <div className="welcomeLgLeaf2">
+      <div className="newPLgLeaf2">
         <img src={lgLeaf2} width="300" />
       </div>
-      <div className="welcomeLgLeaf">
+      <div className="newPLgLeaf">
         <img src={lgLeaf} width="600" />
       </div>
-      <div className="welcomeReverseLeaf">
+      <div className="newPReverseLeaf">
         <img src={rLeaf} width="460" />
       </div>
-      <div className="welcomeReverseLgLeaf">
+      <div className="newPReverseLgLeaf">
         <img src={rLgLeaf} width="350" />
       </div>
 
