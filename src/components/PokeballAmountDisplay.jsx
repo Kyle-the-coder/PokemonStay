@@ -3,23 +3,16 @@ import { useTheme } from "../context/ThemeContext";
 import { Imgs } from "../functions/ImgObject";
 import "../styles/pokeballAmountDisplay.css";
 
-export default function PokeballAmountDisplay() {
+export default function PokeballAmountDisplay({
+  pokeBallCount,
+  setPokeBallCount,
+  greatBallCount,
+  setGreatBallCount,
+  ultraBallCount,
+  setUltraBallCount,
+}) {
   const { darkMode, toggleDarkMode } = useTheme();
-  const [pokeBallCount, setPokeBallCount] = useState(() => {
-    const count = localStorage.getItem("pokeballCount");
-    if (count === null) return 10;
-    return JSON.parse(count);
-  });
-  const [greatBallCount, setGreatBallCount] = useState(() => {
-    const count = localStorage.getItem("greatballCount");
-    if (count === null) return 5;
-    return JSON.parse(count);
-  });
-  const [ultraBallCount, setUltraBallCount] = useState(() => {
-    const count = localStorage.getItem("ultraballCount");
-    if (count === null) return 3;
-    return JSON.parse(count);
-  });
+
   const [pokeballType, setPokeballType] = useState("Pokeballs");
   const [didBallAmountIncrease, setDidBallAmountIncrease] = useState(false);
 
@@ -42,6 +35,10 @@ export default function PokeballAmountDisplay() {
     localStorage.setItem("greatballCount", greatBallCount);
     localStorage.setItem("ultraballCount", ultraBallCount);
   }, [didBallAmountIncrease]);
+
+  const pokeBtnDisabled = pokeballType === "Pokeballs" && pokeBallCount >= 10;
+  const greatBtnDisabled = pokeballType === "Greatballs" && greatBallCount >= 5;
+  const ultraBtnDisabled = pokeballType === "Ultraballs" && ultraBallCount >= 3;
   return (
     <div
       className={
@@ -89,7 +86,11 @@ export default function PokeballAmountDisplay() {
         </p>
       </div>
 
-      <button className="tinyBtn" onClick={() => handleGetMorePokeballs()}>
+      <button
+        className="tinyBtn"
+        disabled={pokeBtnDisabled || greatBtnDisabled || ultraBtnDisabled}
+        onClick={() => handleGetMorePokeballs()}
+      >
         Get More {pokeballType}
       </button>
     </div>
