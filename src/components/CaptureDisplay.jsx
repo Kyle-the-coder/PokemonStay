@@ -28,7 +28,6 @@ export default function CaptureDisplay({
     }
   }, [pokeballType]);
 
-  console.log(isBallThrown);
   return (
     <div
       className={
@@ -100,9 +99,9 @@ export default function CaptureDisplay({
             handleBallThrown(pokemon.pokeInfo);
           }}
           className={
-            pokemon.captured.capture || isBallThrown ? "disabledBtn" : "tinyBtn"
+            pokemon.captured.capture || ballSpin ? "disabledBtn" : "tinyBtn"
           }
-          disabled={isBallThrown || pokemon.captured.capture}
+          disabled={ballSpin || pokemon.captured.capture}
         >
           Throw Pokeball
         </button>
