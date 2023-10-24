@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: space-between;
   border-radius: 0.5rem;
+  border: 0.7px solid black;
 }
 /* POKEMON TITLE CONTAINER */
 .titleContainer {
