@@ -1,33 +1,26 @@
+import leaf from "../assets/leaf2.png";
+import lgLeaf from "../assets/leaf3.png";
+import lgLeaf2 from "../assets/lgLeaf2.png";
+import rLeaf from "../assets/reverseLeaf2.png";
+import rLgLeaf from "../assets/reverseLgLeaf.png";
+
 export default function StorageLeafDecor() {
   return (
     <>
-      <div className="newPLeaf">
+      <div className="storageLeaf">
         <img src={leaf} width="270" />
       </div>
-      <div className="newPLgLeaf2">
+      <div className="storageLgLeaf2">
         <img src={lgLeaf2} width="300" />
       </div>
-      <div className="newPLgLeaf">
+      <div className="storageLgLeaf">
         <img src={lgLeaf} width="600" />
       </div>
-      <div className="newPReverseLeaf">
+      <div className="storageReverseLeaf">
         <img src={rLeaf} width="460" />
       </div>
-      <div className="newPReverseLgLeaf">
+      <div className="storageReverseLgLeaf">
         <img src={rLgLeaf} width="350" />
-      </div>
-
-      <div className="wildGrassDark1">
-        <img src={wildGrass2} width="388" />
-      </div>
-      <div className="wildGrassDark2">
-        <img src={wildGrass2} width="388" />
-      </div>
-      <div className="wildGrass1">
-        <img src={wildGrass} width="500" />
-      </div>
-      <div className="wildGrass2">
-        <img src={wildGrass} width="500" />
       </div>
     </>
   );
