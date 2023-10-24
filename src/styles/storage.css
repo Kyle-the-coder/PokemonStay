@@ -1,3 +1,10 @@
+.storageContainer {
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
 .storageTitleContainer {
   width: 100%;
   display: flex;
