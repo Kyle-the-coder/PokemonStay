@@ -13,17 +13,19 @@ function Storage() {
   return (
     <>
       <div className="container">
-        <div className="storageTitleContainer">
-          <h1>Storage</h1>
+        <div className="storageContainer">
+          <div className="storageTitleContainer">
+            <h1>Storage</h1>
+          </div>
+          <PokeList
+            isCaptured={isCaptured}
+            setIsCaptured={setIsCaptured}
+            state={state}
+            isShiny={isShiny}
+            isReleased={isReleased}
+            setIsReleased={setIsReleased}
+          />
         </div>
-        <PokeList
-          isCaptured={isCaptured}
-          setIsCaptured={setIsCaptured}
-          state={state}
-          isShiny={isShiny}
-          isReleased={isReleased}
-          setIsReleased={setIsReleased}
-        />
       </div>
     </>
   );
