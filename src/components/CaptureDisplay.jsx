@@ -100,9 +100,7 @@ export default function CaptureDisplay({
             handleBallThrown(pokemon.pokeInfo);
           }}
           className={
-            pokemon.captured.capture || isBallThrown
-              ? "disabledBtn"
-              : "captureBtn"
+            pokemon.captured.capture || isBallThrown ? "disabledBtn" : "tinyBtn"
           }
           disabled={isBallThrown || pokemon.captured.capture}
         >
@@ -112,7 +110,7 @@ export default function CaptureDisplay({
           onClick={() => {
             handleGetAway();
           }}
-          className="captureBtn"
+          className="tinyBtn ml1"
         >
           Run
         </button>
