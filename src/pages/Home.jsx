@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Imgs } from "../functions/ImgObject";
 import pokemonStorageImg from "../assets/pokemonStorage.webp";
-import LeafDecor2 from "../components/LeafDecor2";
+import HomeLeafDecor from "../components/HomeLeafDecor";
 import "../styles/homeLeafDecor.css";
 
 function Home() {
@@ -11,7 +11,7 @@ function Home() {
     <>
       <div className="container">
         <div className="welcomeContainer">
-          <LeafDecor2 />
+          <HomeLeafDecor />
           <div className="welcomeTitle">
             <h1>Welcome to Pokemon Stay!</h1>
           </div>
