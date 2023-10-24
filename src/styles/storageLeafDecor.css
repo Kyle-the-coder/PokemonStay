@@ -1,0 +1,24 @@
+.storageLeaf {
+  position: absolute;
+  left: -100px;
+}
+.storageLgLeaf {
+  position: absolute;
+  left: -200px;
+  top: 400px;
+}
+.storageLgLeaf2 {
+  position: absolute;
+  left: -200px;
+  top: 280px;
+}
+.storageReverseLeaf {
+  position: absolute;
+  right: -200px;
+  top: 350px;
+}
+.storageReverseLgLeaf {
+  position: absolute;
+  right: -200px;
+  top: 10px;
+}
