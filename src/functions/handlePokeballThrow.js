@@ -46,10 +46,12 @@ export function handlePokeballThrow(
 
           //IF POKEMON GOT AWAY
           setCatchMessage("Pokemon got away");
+
           setTimeout(() => {
             setBallSpin(false);
           }, [1000]);
         }, [4000]);
+
         //BALL HIT UNSUCCESSFULLY
       } else if (ballHitRand > 7 && ballHitRand <= 10) {
         //SET EVERYTHING TO FALSE FOR UNSUCCESSFUL THROW
