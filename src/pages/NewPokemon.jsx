@@ -13,11 +13,11 @@ import { PokeInput } from "../components/PokeInput";
 import { Imgs } from "../functions/ImgObject";
 import PokeBallDisplay from "../components/PokeBallDisplay";
 import CaptureDisplay from "../components/CaptureDisplay";
-import LeafDecor from "../components/LeafDecor";
 import RunResults from "../components/RunResults";
 import FoundResults from "../components/FoundResults";
 import "../styles/newPokemon.css";
 import "../styles/newPokemonLeafDecor.css";
+import NewPLeafDecor from "../components/NewPLeafDecor";
 
 function NewPokemon() {
   const { state } = useNavigation();
@@ -134,7 +134,7 @@ function NewPokemon() {
     <>
       <div className="container">
         <div className="newPokemonContainer">
-          <LeafDecor />
+          <NewPLeafDecor />
 
           <PokeInput
             pokemon={pokemon}
