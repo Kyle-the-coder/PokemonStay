@@ -106,10 +106,11 @@ export default function CaptureDisplay({
           Throw Pokeball
         </button>
         <button
+          disabled={ballSpin}
           onClick={() => {
             handleGetAway();
           }}
-          className="tinyBtn ml1"
+          className={ballSpin ? "disabledBtn ml1" : "tinyBtn ml1"}
         >
           Run
         </button>
