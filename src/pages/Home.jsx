@@ -37,7 +37,7 @@ function Home() {
               <h1>POKEBALLS</h1>
             </div>
           </div>
-          <button onClick={() => navigate("/newpokemon")} className="btn">
+          <button onClick={() => navigate("/newpokemon")} className="btn mb2">
             Get Started
           </button>
         </div>
