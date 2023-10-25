@@ -23,7 +23,7 @@ function Storage() {
         <div className="storageContainer">
           <StorageLeafDecor />
           <div className="storageTitleContainer">
-            <h1 className="z3">Storage</h1>
+            <h1 className="z3 textWhite">Storage</h1>
           </div>
           {pokeList === null ? (
             <StorageInfoDisplay />
