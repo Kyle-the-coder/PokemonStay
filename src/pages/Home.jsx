@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Imgs } from "../functions/ImgObject";
 import pokemonStorageImg from "../assets/pokemonStorage.webp";
 import HomeLeafDecor from "../components/HomeLeafDecor";
+
 import "../styles/homeLeafDecor.css";
 
 function Home() {
