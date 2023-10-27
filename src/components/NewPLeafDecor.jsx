@@ -21,6 +21,7 @@ export default function NewPLeafDecor() {
       <div className="newPReverseLeaf">
         <img src={rLeaf} width="460" />
       </div>
+
       <div className="newPReverseLgLeaf">
         <img src={rLgLeaf} width="350" />
       </div>
