@@ -8,6 +8,7 @@ import oneStar from "../assets/oneStar.png";
 import twoStar from "../assets/twoStar.png";
 import threeStar from "../assets/threeStar.png";
 import "../styles/pokemonCard.css";
+import { EmptyCard } from "./EmptyCard";
 
 export function PokemonCard({
   pokemon,
@@ -81,137 +82,151 @@ export function PokemonCard({
 
   return (
     <>
-      <div className="cardContainer">
-        <div className="titleContainer">
-          <div className="nameStarContainer">
-            <img
-              className="starImg"
-              src={
-                (starRating == 1 && oneStar) ||
-                (starRating == 2 && twoStar) ||
-                (starRating === 3 && threeStar)
-              }
-              width="40"
-              height="40"
-            />
-            {pokemon
-              ? `${pokemon?.name?.charAt(0).toUpperCase()}${pokemon?.name
-                  ?.slice(1)
-                  .toLowerCase()}`
-              : "Loading..."}
-          </div>
-          <div className="hpContainer">
-            <div
-              className="typeContainer"
-              onMouseEnter={() => setIsInfoDivShown(true)}
-              onMouseLeave={() => setIsInfoDivShown(false)}
-            >
-              {typeList.filter((type) => types.includes(type.props.className))}
-              <div
-                className={` ${
-                  isInfoDivShown
-                    ? "typeInfoContainer"
-                    : "invisTypeInfoContainer"
-                }`}
-              >
-                {isInfoDivShown && (
-                  <>
-                    <p>
-                      {types.map((value, index, array) => {
-                        if (index === array.length - 1) {
-                          return value;
-                        } else {
-                          return value + "/";
-                        }
-                      })}
-                    </p>
-                    <span>&nbsp;</span>
-                    <p>type</p>
-
+      <div className="card">
+        <div className="cardInner">
+          <div className="cardFront">
+            <div className="cardContainer">
+              <div className="titleContainer">
+                <div className="nameStarContainer">
+                  <img
+                    className="starImg"
+                    src={
+                      (starRating == 1 && oneStar) ||
+                      (starRating == 2 && twoStar) ||
+                      (starRating === 3 && threeStar)
+                    }
+                    width="40"
+                    height="40"
+                  />
+                  {pokemon
+                    ? `${pokemon?.name?.charAt(0).toUpperCase()}${pokemon?.name
+                        ?.slice(1)
+                        .toLowerCase()}`
+                    : "Loading..."}
+                </div>
+                <div className="hpContainer">
+                  <div
+                    className="typeContainer"
+                    onMouseEnter={() => setIsInfoDivShown(true)}
+                    onMouseLeave={() => setIsInfoDivShown(false)}
+                  >
+                    {typeList.filter((type) =>
+                      types.includes(type.props.className)
+                    )}
                     <div
-                      className={`${isInfoDivShown ? "triangle" : ""}`}
-                    ></div>
-                  </>
-                )}
-              </div>
-            </div>
-            <div className="hpContainer">
-              {pokemon?.stats[0].base_stat}
-              {pokemon?.stats[0].stat.name}
-            </div>
-          </div>
-        </div>
+                      className={` ${
+                        isInfoDivShown
+                          ? "typeInfoContainer"
+                          : "invisTypeInfoContainer"
+                      }`}
+                    >
+                      {isInfoDivShown && (
+                        <>
+                          <p>
+                            {types.map((value, index, array) => {
+                              if (index === array.length - 1) {
+                                return value;
+                              } else {
+                                return value + "/";
+                              }
+                            })}
+                          </p>
+                          <span>&nbsp;</span>
+                          <p>type</p>
 
-        <div className="pokemonImgContainer">
-          <div className="pokemonImg">
-            {captured && isPokeballShown ? (
-              <div className="pokeballSprite">
-                <img src={captured ? ballType : pokeballType} width="60" />
+                          <div
+                            className={`${isInfoDivShown ? "triangle" : ""}`}
+                          ></div>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                  <div className="hpContainer">
+                    {pokemon?.stats[0].base_stat}
+                    {pokemon?.stats[0].stat.name}
+                  </div>
+                </div>
               </div>
-            ) : ballHit === true && ballSpin === false ? (
-              <div className="pokemonSprite">
-                {isShiny ? (
-                  <img src={pokemon?.sprites?.front_shiny} />
-                ) : (
-                  <img src={pokemon?.sprites?.front_default} />
-                )}
-              </div>
-            ) : ballHit ? (
-              <div className="pokeballSprite">
-                <img
-                  src={captured ? ballType : pokeballType}
-                  width="60"
-                  className="wiggle"
-                />
-              </div>
-            ) : (
-              <>
-                <div className="pokemonSprite">
-                  {isShiny ? (
-                    <img src={pokemon?.sprites?.front_shiny} />
+
+              <div className="pokemonImgContainer">
+                <div className="pokemonImg">
+                  {captured && isPokeballShown ? (
+                    <div className="pokeballSprite">
+                      <img
+                        src={captured ? ballType : pokeballType}
+                        width="60"
+                      />
+                    </div>
+                  ) : ballHit === true && ballSpin === false ? (
+                    <div className="pokemonSprite">
+                      {isShiny ? (
+                        <img src={pokemon?.sprites?.front_shiny} />
+                      ) : (
+                        <img src={pokemon?.sprites?.front_default} />
+                      )}
+                    </div>
+                  ) : ballHit ? (
+                    <div className="pokeballSprite">
+                      <img
+                        src={captured ? ballType : pokeballType}
+                        width="60"
+                        className="wiggle"
+                      />
+                    </div>
                   ) : (
-                    <img src={pokemon?.sprites?.front_default} />
+                    <>
+                      <div className="pokemonSprite">
+                        {isShiny ? (
+                          <img src={pokemon?.sprites?.front_shiny} />
+                        ) : (
+                          <img src={pokemon?.sprites?.front_default} />
+                        )}
+                      </div>
+                    </>
                   )}
-                </div>
-              </>
-            )}
 
-            <div className="pokemonBackgroundImg">
-              <img src={background} />
+                  <div className="pokemonBackgroundImg">
+                    <img src={background} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="pokemonStatsContainer">
+                <div className="pokemonNameContainer">
+                  <div className="pokemonMovesContainer">
+                    {moveDetailList1?.map((move, index) => (
+                      <div className="moves" key={`index_${index}`}>
+                        <div>{move.name}</div>
+                        PP: {move.pp}
+                      </div>
+                    ))}
+                    {moveDetailList2?.map((move, index) => (
+                      <div className="moves" key={index}>
+                        <div>{move.name}</div>
+                        PP: {move.pp}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="shiny">{isShiny ? "Shiny" : ""}</div>
+                  <div className="pokedexLink">
+                    <button className="pokedexBtn">Pokedex</button>
+
+                    <img
+                      className={`${ballSpin ? "rotatingPokeball" : ""}`}
+                      onClick={() => {
+                        setIsReleased(!isReleased);
+                        handleRelease(pokeKey);
+                      }}
+                      src={captured ? ballType : pokeBallEmpty}
+                      width="40"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="pokemonStatsContainer">
-          <div className="pokemonNameContainer">
-            <div className="pokemonMovesContainer">
-              {moveDetailList1?.map((move, index) => (
-                <div className="moves" key={`index_${index}`}>
-                  <div>{move.name}</div>
-                  PP: {move.pp}
-                </div>
-              ))}
-              {moveDetailList2?.map((move, index) => (
-                <div className="moves" key={index}>
-                  <div>{move.name}</div>
-                  PP: {move.pp}
-                </div>
-              ))}
-            </div>
-            <div className="shiny">{isShiny ? "Shiny" : ""}</div>
-            <div className="pokedexLink">
-              <button className="pokedexBtn">Pokedex</button>
-
-              <img
-                className={`${ballSpin ? "rotatingPokeball" : ""}`}
-                onClick={() => {
-                  setIsReleased(!isReleased);
-                  handleRelease(pokeKey);
-                }}
-                src={captured ? ballType : pokeBallEmpty}
-                width="40"
-              />
-            </div>
+          <div className="cardBack">
+            <EmptyCard />
           </div>
         </div>
       </div>
