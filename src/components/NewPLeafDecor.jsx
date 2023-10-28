@@ -29,6 +29,7 @@ export default function NewPLeafDecor() {
       <div className="wildGrassDark2">
         <img src={wildGrass2} width="388" />
       </div>
+
       <div className="wildGrass1">
         <img src={wildGrass} width="500" />
       </div>
