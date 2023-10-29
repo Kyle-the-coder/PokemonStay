@@ -38,13 +38,13 @@
 }
 
 /* Styles for the back of the card */
-.cardFront {
-  transform: rotateY(180deg); /* Initially, the back is hidden */
+.cardBack {
+  transform: rotateX(180deg); /* Initially, the back is hidden */
 }
 
 /* Hover effect to flip the card */
 .cardInner.flipped {
-  transform: rotateY(180deg); /* Rotate the card when hovered */
+  transform: rotateX(180deg); /* Rotate the card when hovered */
 }
 /* POKEMON TITLE CONTAINER */
 .titleContainer {
