@@ -43,7 +43,7 @@
 }
 
 /* Hover effect to flip the card */
-.card.cardInner {
+.cardInner.flipped {
   transform: rotateX(180deg); /* Rotate the card when hovered */
 }
 /* POKEMON TITLE CONTAINER */
