@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { handleRelease } from "../functions/handleRelease";
 import { typeList } from "../svg/typeList";
+import { useCardContext } from "../context/CardContext";
+import { EmptyCard } from "./EmptyCard";
 import axios from "axios";
 import background from "../assets/bg.webp";
 import pokeBallEmpty from "../assets/pokeballEmpty.png";
@@ -8,7 +10,6 @@ import oneStar from "../assets/oneStar.png";
 import twoStar from "../assets/twoStar.png";
 import threeStar from "../assets/threeStar.png";
 import "../styles/pokemonCard.css";
-import { EmptyCard } from "./EmptyCard";
 
 export function PokemonCard({
   pokemon,
@@ -25,6 +26,7 @@ export function PokemonCard({
   isPokeballShown,
   pokeballType,
 }) {
+  const { isCardFlipped, setIsCardFlipped } = useCardContext();
   const [captureInfo, setCaptureInfo] = useState([]);
   const [moveList, setMoveList] = useState(() => {
     return [...(pokemon?.moves?.map((move) => move.move) ?? [])];
@@ -78,12 +80,15 @@ export function PokemonCard({
 
   useEffect(() => {
     setIsCaptured(captured);
+    if (state === "submitting") {
+      setIsCardFlipped(false);
+    }
   }, [state, captureInfo, starRating, captured]);
 
   return (
     <>
       <div className="card">
-        <div className="cardInner">
+        <div className={`cardInner ${isCardFlipped ? "flipped" : ""}`}>
           <div className="cardFront">
             <div className="cardContainer">
               <div className="titleContainer">
