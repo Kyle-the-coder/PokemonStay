@@ -13,7 +13,11 @@ export function PokeInput({ setBallHit, errors, pokemon }) {
             placeholder="Enter a pokemon's name..."
             defaultValue={pokemon?.name}
           />
-          <button className="smallBtn" onClick={() => setBallHit(null)}>
+          <button
+            id="flipButton"
+            className="smallBtn"
+            onClick={() => setBallHit(null)}
+          >
             submit
           </button>
         </div>
