@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import { Imgs } from "../functions/ImgObject";
+import { useCardContext } from "../context/CardContext";
 import "../styles/toggle.css";
 import "../styles/navbar.css";
 
 export function Navbar() {
   const { darkMode, toggleDarkMode } = useTheme();
+  const { isCardFlipped, setIsCardFlipped } = useCardContext();
 
   return (
     <nav className={!darkMode ? "top-nav-dark" : "top-nav-light"}>
@@ -17,10 +19,14 @@ export function Navbar() {
       </div>
       <ul className="nav-list">
         <li>
-          <Link to="/storage">Your Pokemon</Link>
+          <Link onClick={() => setIsCardFlipped(false)} to="/storage">
+            Your Pokemon
+          </Link>
         </li>
         <li>
-          <Link to="/newpokemon">New Pokemon</Link>
+          <Link onClick={() => setIsCardFlipped(false)} to="/newpokemon">
+            New Pokemon
+          </Link>
         </li>
         <li>
           <label className="switch">
