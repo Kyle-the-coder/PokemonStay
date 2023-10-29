@@ -80,16 +80,20 @@ export function PokemonCard({
 
   useEffect(() => {
     setIsCaptured(captured);
-    if (state === "submitting") {
-      setIsCardFlipped(false);
-    }
-  }, [state, captureInfo, starRating, captured]);
+  }, [captureInfo]);
+
+  useEffect(() => {
+    setIsCardFlipped(false);
+    const timeOutId = setTimeout(() => {
+      setIsCardFlipped(true);
+    }, 1000);
+  }, [state]);
 
   return (
     <>
       <div className="card">
         <div className={`cardInner ${isCardFlipped ? "flipped" : ""}`}>
-          <div className="cardFront">
+          <div className="cardBack">
             <div className="cardContainer">
               <div className="titleContainer">
                 <div className="nameStarContainer">
@@ -230,7 +234,7 @@ export function PokemonCard({
               </div>
             </div>
           </div>
-          <div className="cardBack">
+          <div className="cardFront">
             <EmptyCard />
           </div>
         </div>
