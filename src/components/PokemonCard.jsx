@@ -83,11 +83,10 @@ export function PokemonCard({
   }, [captureInfo]);
 
   useEffect(() => {
-    setIsCardFlipped(false);
     const timeOutId = setTimeout(() => {
       setIsCardFlipped(true);
     }, 1000);
-  }, [state]);
+  }, [state, isCardFlipped]);
 
   return (
     <>
