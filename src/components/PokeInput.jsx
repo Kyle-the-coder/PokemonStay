@@ -1,6 +1,8 @@
 import { Form } from "react-router-dom";
+import { useCardContext } from "../context/CardContext";
 
 export function PokeInput({ setBallHit, errors, pokemon }) {
+  const { isCardFlipped, setIsCardFlipped } = useCardContext();
   return (
     <div className="title">
       <h1>Search in the wild grass:</h1>
@@ -16,7 +18,10 @@ export function PokeInput({ setBallHit, errors, pokemon }) {
           <button
             id="flipButton"
             className="smallBtn"
-            onClick={() => setBallHit(null)}
+            onClick={() => {
+              setIsCardFlipped(false);
+              setBallHit(null);
+            }}
           >
             submit
           </button>
