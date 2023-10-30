@@ -24,9 +24,7 @@ export function Navbar() {
           </Link>
         </li>
         <li>
-          <Link onClick={() => setIsCardFlipped(false)} to="/newpokemon">
-            New Pokemon
-          </Link>
+          <Link to="/newpokemon">New Pokemon</Link>
         </li>
         <li>
           <label className="switch">
