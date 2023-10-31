@@ -141,7 +141,6 @@ export function PokemonCard({
                           </p>
                           <span>&nbsp;</span>
                           <p>type</p>
-
                           <div
                             className={`${isInfoDivShown ? "triangle" : ""}`}
                           ></div>
