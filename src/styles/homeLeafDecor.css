@@ -1,6 +1,7 @@
 .welcomeLeaf {
   position: absolute;
   left: -100px;
+  width: 300px;
   z-index: 3;
 }
 .welcomeLgLeaf {
@@ -17,4 +18,20 @@
   position: absolute;
   right: -200px;
   top: 10px;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .welcomeReverseLeaf {
+    position: absolute;
+    right: -200px;
+    top: 250px;
+    width: 450px;
+  }
+  .welcomeLgLeaf {
+    position: absolute;
+    left: -200px;
+    top: 250px;
+    width: 600px;
+  }
 }
