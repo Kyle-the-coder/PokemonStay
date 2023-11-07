@@ -150,7 +150,7 @@ export function PokeList({
           />
           <label>Shiny's only</label>
         </div>
-        <select onChange={handleSelectChange} className="ml1">
+        <select onChange={handleSelectChange} className="ml1 selectContainer">
           <option value="">Select an option</option>
           <option value="mostRecent">Most Recent</option>
           <option value="hpHigh">HP High</option>
