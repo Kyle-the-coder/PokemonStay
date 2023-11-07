@@ -68,3 +68,65 @@
 .home-button > img {
   margin-left: 10px;
 }
+
+@media (max-width: 767px) {
+  .top-nav-light {
+    padding: 10px;
+  }
+  .top-nav-dark {
+    padding: 10px;
+  }
+  .top-nav {
+    width: 100vw;
+    color: hsl(200, 20%, 95%);
+    background: hsl(0, 0%, 0%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0px;
+    margin-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+  }
+
+  .nav-list {
+    margin: 0;
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    list-style: none;
+    align-items: center;
+    font-size: 0.5rem;
+    width: 50%;
+  }
+
+  .nav-list a {
+    color: white;
+
+    text-decoration: none;
+    font-size: 0.6rem;
+  }
+
+  .nav-list a:hover,
+  .nav-list a:focus {
+    text-decoration: underline;
+  }
+
+  .nav-text-large {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    width: 190px;
+    justify-content: space-between;
+  }
+
+  .home-button {
+    justify-content: space-evenly;
+  }
+  .nav-Img {
+    width: 30px;
+    height: 30px;
+  }
+}
