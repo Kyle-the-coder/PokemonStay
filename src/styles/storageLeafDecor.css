@@ -22,3 +22,12 @@
   right: -200px;
   top: 10px;
 }
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .storageLgLeaf {
+    position: absolute;
+    left: -200px;
+    top: 580px;
+  }
+}
