@@ -22,16 +22,13 @@
 
 /* Mobile styles */
 @media (max-width: 767px) {
-  .welcomeReverseLeaf {
-    position: absolute;
-    right: -200px;
-    top: 250px;
+  .welcomeReverseLeaf > img {
     width: 450px;
   }
   .welcomeLgLeaf {
-    position: absolute;
-    left: -200px;
-    top: 250px;
+    top: 150px;
+  }
+  .welcomeLgLeaf > img {
     width: 600px;
   }
 }
