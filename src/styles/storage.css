@@ -26,6 +26,9 @@
   justify-content: space-evenly;
   z-index: 3;
 }
+.selectContainer {
+  z-index: 3;
+}
 
 /* STORAGE INFO STYLES */
 .storageInfoContainer {
@@ -48,4 +51,8 @@
 }
 .storageInfo > h1 {
   margin-bottom: 10px;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
 }
