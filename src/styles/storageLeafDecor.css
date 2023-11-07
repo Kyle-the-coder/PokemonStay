@@ -25,9 +25,16 @@
 
 /* Mobile styles */
 @media (max-width: 767px) {
+  .storageReverseLgLeaf {
+    top: 150px;
+  }
   .storageLgLeaf {
-    position: absolute;
-    left: -200px;
-    top: 580px;
+    top: 680px;
+  }
+  .storageLgLeaf2 {
+    top: 380px;
+  }
+  .storageReverseLeaf {
+    top: 350px;
   }
 }
