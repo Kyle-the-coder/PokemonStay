@@ -5,7 +5,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import { CardProvider } from "./context/CardContext";
 import { router } from "./routes/router";
 import "./styles/utils.css";
-import "./styles/styles.css";
+import "./styles/home.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider>
