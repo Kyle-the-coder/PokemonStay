@@ -31,4 +31,11 @@
   .welcomeLgLeaf > img {
     width: 600px;
   }
+  .welcomeReverseLgLeaf > img {
+    width: 300px;
+  }
+  .welcomeReverseLgLeaf {
+    top: 0px;
+    right: -150px;
+  }
 }
