@@ -14,10 +14,10 @@ function Home() {
         <div className="welcomeContainer">
           <HomeLeafDecor />
           <div className="welcomeTitle">
-            <h1>Welcome to Pokemon Stay!</h1>
+            <h1 className="z3">Welcome to Pokemon Stay!</h1>
           </div>
           <div className="welcomeInfoContainer">
-            <img src={pokemonStorageImg} width="55%" />
+            <img src={pokemonStorageImg} className="homeImg" />
             <div className="welcomeInfo">
               A digital card collector game where you have to actually catch the
               cards in the wild!
@@ -26,15 +26,15 @@ function Home() {
 
           <div className="welcomeDisplayInfoContainer">
             <div className="welcomeDisplay">
-              <img src={Imgs.shinyImg} width="70%" />
+              <img className="welcomeDisplayImg" src={Imgs.shinyImg} />
               <h1>SHINYS</h1>
             </div>
             <div className="welcomeDisplayGrey">
-              <img src={Imgs.rarityImg} width="70%" />
+              <img className="welcomeDisplayImg" src={Imgs.rarityImg} />
               <h1>RARITY</h1>
             </div>
             <div className="welcomeDisplay">
-              <img src={Imgs.ultraBall} width="70%" />
+              <img className="welcomeDisplayImg" src={Imgs.ultraBall} />
               <h1>POKEBALLS</h1>
             </div>
           </div>
