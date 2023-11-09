@@ -26,15 +26,15 @@
 /* Mobile styles */
 @media (max-width: 767px) {
   .storageReverseLgLeaf {
-    top: 150px;
-  }
-  .storageLgLeaf {
-    top: 680px;
+    top: 250px;
   }
   .storageLgLeaf2 {
-    top: 380px;
+    top: 580px;
   }
   .storageReverseLeaf {
-    top: 350px;
+    top: 850px;
+  }
+  .storageLgLeaf {
+    top: 1280px;
   }
 }
