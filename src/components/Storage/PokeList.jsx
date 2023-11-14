@@ -1,6 +1,6 @@
 import { createContext, useEffect, useReducer, useRef, useState } from "react";
 import { useNavigation } from "react-router-dom";
-import { PokemonCard } from "./PokemonCard";
+import { PokemonCard } from "../PokemonCard";
 import "../styles/storage.css";
 
 const FILTERS = {

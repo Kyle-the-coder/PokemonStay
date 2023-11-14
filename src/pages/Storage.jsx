@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigation } from "react-router-dom";
-import { PokeList } from "../components/PokeList";
-import StorageInfoDisplay from "../components/StorageInfoDisplay";
-import StorageLeafDecor from "../components/StorageLeafDecor";
+import { PokeList } from "../components/Storage/PokeList";
+import StorageInfoDisplay from "../components/Storage/StorageInfoDisplay";
+import StorageLeafDecor from "../components/Storage/StorageLeafDecor";
 import "../styles/storage.css";
 import "../styles/storageLeafDecor.css";
 
