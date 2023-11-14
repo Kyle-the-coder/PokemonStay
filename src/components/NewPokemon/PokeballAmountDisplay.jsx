@@ -11,7 +11,7 @@ export default function PokeballAmountDisplay({
   ultraBallCount,
   setUltraBallCount,
 }) {
-  const { darkMode, toggleDarkMode } = useTheme;
+  const { darkMode, toggleDarkMode } = useTheme();
 
   const [pokeballType, setPokeballType] = useState("Pokeballs");
   const [didBallAmountIncrease, setDidBallAmountIncrease] = useState(false);

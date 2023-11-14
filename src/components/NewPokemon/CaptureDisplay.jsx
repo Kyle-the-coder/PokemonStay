@@ -20,7 +20,7 @@ export default function CaptureDisplay({
 }) {
   const { darkMode, toggleDarkMode } = useTheme();
   const [ballType, setBallType] = useState(pokeballType);
-  const { isCardFlipped, setIsCardFlipped } = useCardContext;
+  const { isCardFlipped, setIsCardFlipped } = useCardContext();
 
   useEffect(() => {
     if (typeof pokeballType === "object") {
