@@ -14,8 +14,8 @@ import { Imgs } from "../functions/ImgObject";
 import PokeBallDisplay from "../components/PokeBallDisplay";
 import CaptureDisplay from "../components/CaptureDisplay";
 import RunResults from "../components/RunResults";
-import FoundResults from "../components/FoundResults";
-import NewPLeafDecor from "../components/NewPLeafDecor";
+import FoundResults from "../components/NewPokemon/FoundResults";
+import NewPLeafDecor from "../components/NewPokemon/NewPLeafDecor";
 import "../styles/newPokemon.css";
 import "../styles/newPokemonLeafDecor.css";
 
