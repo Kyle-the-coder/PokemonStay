@@ -1,8 +1,8 @@
-import leaf from "../assets/leaf2.png";
-import lgLeaf from "../assets/leaf3.png";
-import rLeaf from "../assets/reverseLeaf2.png";
-import rLgLeaf from "../assets/reverseLgLeaf.png";
-import "../styles/homeLeafDecor.css";
+import leaf from "../../assets/leaf2.png";
+import lgLeaf from "../../assets/leaf3.png";
+import rLeaf from "../../assets/reverseLeaf2.png";
+import rLgLeaf from "../../assets/reverseLgLeaf.png";
+import "../../styles/homeLeafDecor.css";
 
 export default function HomeLeafDecor() {
   return (

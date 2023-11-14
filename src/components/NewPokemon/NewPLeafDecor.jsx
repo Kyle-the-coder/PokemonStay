@@ -1,10 +1,10 @@
-import leaf from "../assets/leaf2.png";
-import lgLeaf from "../assets/leaf3.png";
-import lgLeaf2 from "../assets/lgLeaf2.png";
-import rLeaf from "../assets/reverseLeaf2.png";
-import rLgLeaf from "../assets/reverseLgLeaf.png";
-import wildGrass from "../assets/wildGrass3.png";
-import wildGrass2 from "../assets/wildGrass.png";
+import leaf from "../../assets/leaf2.png";
+import lgLeaf from "../../assets/leaf3.png";
+import lgLeaf2 from "../../assets/lgLeaf2.png";
+import rLeaf from "../../assets/reverseLeaf2.png";
+import rLgLeaf from "../../assets/reverseLgLeaf.png";
+import wildGrass from "../../assets/wildGrass3.png";
+import wildGrass2 from "../../assets/wildGrass.png";
 
 export default function NewPLeafDecor() {
   return (

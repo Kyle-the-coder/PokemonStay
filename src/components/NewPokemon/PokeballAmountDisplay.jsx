@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useTheme } from "../context/ThemeContext";
-import { Imgs } from "../functions/ImgObject";
-import "../styles/pokeballAmountDisplay.css";
+import { useTheme } from "../../context/ThemeContext";
+import { Imgs } from "../../functions/ImgObject";
+import "../../styles/pokeballAmountDisplay.css";
 
 export default function PokeballAmountDisplay({
   pokeBallCount,
@@ -11,7 +11,7 @@ export default function PokeballAmountDisplay({
   ultraBallCount,
   setUltraBallCount,
 }) {
-  const { darkMode, toggleDarkMode } = useTheme();
+  const { darkMode, toggleDarkMode } = useTheme;
 
   const [pokeballType, setPokeballType] = useState("Pokeballs");
   const [didBallAmountIncrease, setDidBallAmountIncrease] = useState(false);

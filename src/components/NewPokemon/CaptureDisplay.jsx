@@ -1,10 +1,10 @@
-import { useTheme } from "../context/ThemeContext";
-import pokeBall from "../assets/pokeballFinal.png";
-import greatBall from "../assets/greatballFinal.png";
-import ultraBall from "../assets/ultraballFinal.png";
+import pokeBall from "../../assets/pokeballFinal.png";
+import greatBall from "../../assets/greatballFinal.png";
+import ultraBall from "../../assets/ultraballFinal.png";
 import { useEffect, useState } from "react";
-import { Imgs } from "../functions/ImgObject";
-import { useCardContext } from "../context/CardContext";
+import { Imgs } from "../../functions/ImgObject";
+import { useTheme } from "../../context/ThemeContext";
+import { useCardContext } from "../../context/CardContext";
 export default function CaptureDisplay({
   pokemon,
   ballHit,
@@ -20,7 +20,7 @@ export default function CaptureDisplay({
 }) {
   const { darkMode, toggleDarkMode } = useTheme();
   const [ballType, setBallType] = useState(pokeballType);
-  const { isCardFlipped, setIsCardFlipped } = useCardContext();
+  const { isCardFlipped, setIsCardFlipped } = useCardContext;
 
   useEffect(() => {
     if (typeof pokeballType === "object") {

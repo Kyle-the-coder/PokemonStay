@@ -1,9 +1,9 @@
-import { useTheme } from "../context/ThemeContext";
-import { Imgs } from "../functions/ImgObject";
-import "../styles/gameInfoDisplay.css";
+import { useTheme } from "../../context/ThemeContext";
+import { Imgs } from "../../functions/ImgObject";
+import "../../styles/gameInfoDisplay.css";
 
 export default function GameInfoDisplay() {
-  const { darkMode, toggleDarkMode } = useTheme();
+  const { darkMode, toggleDarkMode } = useTheme;
   return (
     <div
       className={

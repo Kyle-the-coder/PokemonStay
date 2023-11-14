@@ -1,7 +1,7 @@
 import { createContext, useEffect, useReducer, useRef, useState } from "react";
 import { useNavigation } from "react-router-dom";
 import { PokemonCard } from "../PokemonCard";
-import "../styles/storage.css";
+import "../../styles/storage.css";
 
 const FILTERS = {
   MOST_RECENT: "MOST_RECENT",

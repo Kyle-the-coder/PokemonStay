@@ -1,8 +1,8 @@
-import leaf from "../assets/leaf2.png";
-import lgLeaf from "../assets/leaf3.png";
-import lgLeaf2 from "../assets/lgLeaf2.png";
-import rLeaf from "../assets/reverseLeaf2.png";
-import rLgLeaf from "../assets/reverseLgLeaf.png";
+import leaf from "../../assets/leaf2.png";
+import lgLeaf from "../../assets/leaf3.png";
+import lgLeaf2 from "../../assets/lgLeaf2.png";
+import rLeaf from "../../assets/reverseLeaf2.png";
+import rLgLeaf from "../../assets/reverseLgLeaf.png";
 
 export default function StorageLeafDecor() {
   return (

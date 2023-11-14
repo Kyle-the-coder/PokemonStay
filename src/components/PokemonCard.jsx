@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { handleRelease } from "../functions/handleRelease";
 import { typeList } from "../svg/typeList";
 import { useCardContext } from "../context/CardContext";
-import { EmptyCard } from "./EmptyCard";
+import { EmptyCard } from "./NewPokemon/EmptyCard";
 import axios from "axios";
 import background from "../assets/bg.webp";
 import pokeBallEmpty from "../assets/pokeballEmpty.png";

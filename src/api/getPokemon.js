@@ -1,4 +1,3 @@
-import { EmptyCard } from "../components/EmptyCard";
 import { baseApi } from "./baseApi";
 
 export function getPokemon(input) {

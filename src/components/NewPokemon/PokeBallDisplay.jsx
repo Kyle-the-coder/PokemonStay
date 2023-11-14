@@ -1,8 +1,8 @@
-import pokeBall from "../assets/pokeballFinal.png";
-import greatBall from "../assets/greatballFinal.png";
-import ultraBall from "../assets/ultraballFinal.png";
-import { useTheme } from "../context/ThemeContext";
-import { Imgs } from "../functions/ImgObject";
+import pokeBall from "../../assets/pokeballFinal.png";
+import greatBall from "../../assets/greatballFinal.png";
+import ultraBall from "../../assets/ultraballFinal.png";
+import { Imgs } from "../../functions/ImgObject";
+import { useTheme } from "../../context/ThemeContext";
 
 export default function PokeBallDisplay({
   pokeballType,
