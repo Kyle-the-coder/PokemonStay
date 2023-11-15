@@ -1,8 +1,6 @@
-import CaptureDisplay from "./CaptureDisplay";
 import { EmptyCard } from "./EmptyCard";
 import GameInfoDisplay from "./GameInfoDisplay";
 import PokeballAmountDisplay from "./PokeballAmountDisplay";
-import PokeBallDisplay from "./PokeBallDisplay";
 
 export default function RunResults({
   catchMessage,
